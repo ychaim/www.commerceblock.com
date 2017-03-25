@@ -878,7 +878,7 @@
     var api = {};
 
     // Cross-Domain AJAX for IE8
-    
+
 
     var $doc = $(document);
     var $forms;
@@ -951,7 +951,10 @@
       // Handle form submission for Webflow forms
       $doc.on('submit', namespace + ' form', function(evt) {
         var data = $.data(this, namespace);
+
         if (data.handler) {
+
+
           data.evt = evt;
           data.handler(data);
         }
@@ -1051,17 +1054,19 @@
       // Read site ID
       // NOTE: If this site is exported, the HTML tag must retain the data-wf-site attribute for forms to work
       if (!siteId) { afterSubmit(data); return; }
-      var url = "https://webflow.com" + '/api/v1/form/' + siteId;
+      var url = "https://85hv1luk2g.execute-api.us-east-1.amazonaws.com/prod/contact";
 
-      // Work around same-protocol IE XDR limitation - without this IE9 and below forms won't submit
-      if (retro && url.indexOf("https://webflow.com") >= 0) {
-        url = url.replace("https://webflow.com", "http://formdata.webflow.com");
+      var msg = {
+        name: payload.fields.name,
+        email: payload.fields.email,
+        description: payload.fields.description
       }
 
       $.ajax({
         url: url,
         type: 'POST',
-        data: payload,
+        data: JSON.stringify(msg),
+        contentType: "application/json; charset=utf-8",
         dataType: 'json',
         crossDomain: true
       }).done(function() {
