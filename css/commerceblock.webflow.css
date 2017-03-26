@@ -516,6 +516,13 @@ html.w-mod-js *[data-ix="no-white-menu"] {
     -ms-flex-align: stretch;
     align-items: stretch;
   }
+  .nav-menu {
+    background-color: #fff;
+  }
+  .nav-menu.black {
+    z-index: 10001;
+    background-color: rgba(0, 0, 0, .5);
+  }
   .content-wrapper {
     -webkit-box-flex: 0;
     -webkit-flex: 0 auto;
@@ -528,6 +535,15 @@ html.w-mod-js *[data-ix="no-white-menu"] {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+  }
+  .menu-white {
+    color: #fff;
+  }
+  .menu-white.w--open {
+    background-color: rgba(0, 0, 0, .5);
+  }
+  .menu-button.w--open {
+    background-color: #258c42;
   }
 }
 
@@ -542,6 +558,12 @@ html.w-mod-js *[data-ix="no-white-menu"] {
 }
 
 @media (max-width: 479px) {
+  .nav-link {
+    z-index: 10001;
+  }
+  .navbar {
+    z-index: 10001;
+  }
   .hero-title {
     text-align: center;
   }
