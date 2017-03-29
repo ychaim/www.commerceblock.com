@@ -186,12 +186,6 @@ h3 {
   font-weight: 400;
 }
 
-.link-block {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
 .btn-play {
   display: -webkit-box;
   display: -webkit-flex;
@@ -346,6 +340,18 @@ h3 {
   color: #fff;
   font-size: 20px;
   font-weight: 400;
+  margin-left: 10px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+@@media {
+  .link-block:hover {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
 }
 
 .link-block:hover {
@@ -544,6 +550,12 @@ html.w-mod-js *[data-ix="no-white-menu"] {
   }
   .menu-button.w--open {
     background-color: #258c42;
+  }
+}
+
+@media {
+  .link-block {
+    margin-bottom: 10px;
   }
 }
 
