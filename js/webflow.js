@@ -3095,5 +3095,5 @@
 Webflow.require('ix').init([
   {"slug":"new-interaction","name":"New Interaction","value":{"style":{},"triggers":[{"type":"load","loopA":true,"stepsA":[{"transition":"transform 400ms ease-in 0","x":"0px","y":"10px","z":"0px","scaleX":1,"scaleY":1,"scaleZ":1},{"transition":"transform 400ms ease 0","x":"0px","y":"0px","z":"0px"}],"stepsB":[]}]}},
   {"slug":"no-white-menu","name":"no white menu","value":{"style":{"opacity":0},"triggers":[]}},
-  {"slug":"show-white-mnue","name":"Show white mnue","value":{"style":{},"triggers":[{"type":"scroll","selector":".navbar-white","stepsA":[{"opacity":1,"transition":"opacity 400ms ease 0"}],"stepsB":[{"opacity":0,"transition":"opacity 400ms ease 0"}]}]}}
+  {"slug":"show-white-menu","name":"Show white mnue","value":{"style":{},"triggers":[{"type":"scroll","selector":".navbar-white","stepsA":[{"opacity":1,"transition":"opacity 400ms ease 0"}],"stepsB":[{"opacity":0,"transition":"opacity 400ms ease 0"}]}]}}
 ]);
