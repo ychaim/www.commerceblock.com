@@ -1,12 +1,13 @@
 {
     "InvalidationBatch": {
         "Paths": {
-            "Quantity": 5,
+            "Quantity": 6,
             "Items": [
                 "/css/",
                 "/fonts/",
                 "/images/",
                 "/js/",
+                "/static/",
                 "/index.html"
             ]
         },
