@@ -1,14 +1,10 @@
 {
     "InvalidationBatch": {
         "Paths": {
-            "Quantity": 6,
+            "Quantity": 2,
             "Items": [
-                "/css/",
-                "/fonts/",
-                "/images/",
-                "/js/",
-                "/static/",
-                "/index.html"
+                "/",
+                "/*"
             ]
         },
         "CallerReference": "__TIMESTAMP__"
