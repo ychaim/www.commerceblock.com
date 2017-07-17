@@ -2881,6 +2881,10 @@
       var header = $('header, ' + rootTag + ' > .header, ' + rootTag + ' > .w-nav:not([data-no-scroll])');
       var offset = header.css('position') === 'fixed' ? header.outerHeight() : 0;
 
+      if (hash !== 'contact') {
+        offset = 100;
+      }
+
       win.setTimeout(function() {
         scroll(el, offset);
       }, e ? 0 : 300);
