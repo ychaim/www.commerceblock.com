@@ -1057,10 +1057,11 @@
       var url = "https://85hv1luk2g.execute-api.us-east-1.amazonaws.com/prod/contact";
 
       var msg = {
+        source: payload.name,
         name: payload.fields.name,
         email: payload.fields.email,
         description: payload.fields.description
-      }
+      };
 
       $.ajax({
         url: url,
