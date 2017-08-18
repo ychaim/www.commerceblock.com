@@ -617,6 +617,7 @@ p {
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
+  margin: 40px 0;
 }
 
 .token-header {
@@ -921,6 +922,18 @@ p {
   }
   .image-2 {
     margin-right: 0px;
+  }
+  .token-header {
+    font-size: 31px;
+  }
+  .token-button {
+    font-size: 16px;
+  }
+  .w-form {
+    width:100%;
+  }
+  .token-form {
+    width:100%;
   }
 }
 
