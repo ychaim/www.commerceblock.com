@@ -1054,28 +1054,38 @@
       // Read site ID
       // NOTE: If this site is exported, the HTML tag must retain the data-wf-site attribute for forms to work
       if (!siteId) { afterSubmit(data); return; }
-      var url = "https://85hv1luk2g.execute-api.us-east-1.amazonaws.com/prod/contact";
 
-      var msg = {
-        source: payload.name,
-        name: payload.fields.name,
-        email: payload.fields.email,
-        description: payload.fields.description
-      };
-
-      $.ajax({
-        url: url,
-        type: 'POST',
-        data: JSON.stringify(msg),
-        contentType: "application/json; charset=utf-8",
-        dataType: 'json',
-        crossDomain: true
-      }).done(function() {
+      if (payload.name === 'Token Form') {
+        const form = $('#mc-embedded-subscribe-form')
+        console.log($('#mce-EMAIL').val())
+        console.log(form)
+        $('#mce-EMAIL').val(payload.fields.email)
+        console.log($('#mce-EMAIL').val())
+        form.submit();
         data.success = true;
         afterSubmit(data);
-      }).fail(function() {
-        afterSubmit(data);
-      });
+      } else {
+        var url = "https://85hv1luk2g.execute-api.us-east-1.amazonaws.com/prod/contact";
+        var msg = {
+            source: payload.name,
+            name: payload.fields.name,
+            email: payload.fields.email,
+            description: payload.fields.description
+        };
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: JSON.stringify(msg),
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            crossDomain: true
+        }).done(function () {
+            data.success = true;
+            afterSubmit(data);
+        }).fail(function () {
+            afterSubmit(data);
+        });
+      }
     }
 
     // Submit form to MailChimp
