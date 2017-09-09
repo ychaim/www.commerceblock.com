@@ -1504,7 +1504,7 @@ h1 {
   /* Full-width containers */
     .container {
       width: 100%;
-      padding-left: 70px;
+      padding-left: 30px;
       padding-right: 25px;
     }
 
