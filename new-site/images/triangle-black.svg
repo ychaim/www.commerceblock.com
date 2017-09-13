@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="29px" height="18px" viewBox="0 0 29 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>triangle-black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="commereblock-lp" transform="translate(-476.000000, -607.000000)" fill="#4A4A4A">
+            <g id="triangle-black" transform="translate(476.000000, 607.000000)">
+                <rect id="Rectangle" transform="translate(20.500000, 9.000000) rotate(45.000000) translate(-20.500000, -9.000000) " x="19" y="-1" width="3" height="20"></rect>
+                <rect id="Rectangle" transform="translate(8.500000, 9.000000) scale(-1, 1) rotate(45.000000) translate(-8.500000, -9.000000) " x="7" y="-1" width="3" height="20"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

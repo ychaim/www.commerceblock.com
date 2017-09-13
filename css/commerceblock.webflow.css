@@ -41,8 +41,8 @@ h1 {
     -ms-flex-pack: justify;
     justify-content: space-between;
     background-color: #142a3a;
-    background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .05), #000), url('../images/hero-image.jpg');
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, .05), #000), url('../images/hero-image.jpg');
+    background-image: -webkit-linear-gradient(270deg, rgba(30, 110, 53, .82), #000), url('../images/hero-photo.jpg');
+    background-image: linear-gradient(180deg, rgba(30, 110, 53, .82), #000), url('../images/hero-photo.jpg');
     background-position: 0px 0px, 0px 0px;
     background-size: auto, cover;
     background-attachment: scroll, fixed;
@@ -163,12 +163,18 @@ h1 {
     height: 66px;
   }
 
+  .hero-header {
+    font-size: 42px;
+  }
+
   .hero-title {
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    padding-right: 0px;
+    padding-left: 0px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -178,9 +184,10 @@ h1 {
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
   }
 
   .heading {
@@ -190,7 +197,8 @@ h1 {
   .heading-2 {
     font-family: Lato, sans-serif;
     color: #fff;
-    font-weight: 400;
+    font-size: 22px;
+    font-weight: 300;
   }
 
   .btn-play {
@@ -357,14 +365,14 @@ h1 {
     -ms-flex-item-align: center;
     align-self: center;
   }
-
+/*
   @@media {
     .link-block:hover {
       -webkit-transform: none;
       -ms-transform: none;
       transform: none;
-    }
-  }
+    } */
+  /* } */
 
   .link-block:hover {
     -webkit-transform: translate(0px, -10px);
@@ -721,13 +729,20 @@ h1 {
   }
 
   .token-button.cta {
-    width: 300px;
+    width: 270px;
     margin-top: 24px;
     margin-left: 0px;
     padding-right: 0px;
     padding-left: 0px;
-    font-size: 21px;
+    border-style: solid;
+    font-size: 18px;
     text-align: center;
+  }
+
+  .token-button.cta.white {
+    margin-left: 20px;
+    border: 2px solid #fff;
+    background-color: hsla(0, 0%, 100%, 0);
   }
 
   .div-block {
@@ -820,40 +835,6 @@ h1 {
     font-family: Lato, sans-serif;
   }
 
-  .legend-div {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    width: 50%;
-    margin-bottom: 5px;
-    padding-left: 0px;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 auto;
-    -ms-flex: 0 auto;
-    flex: 0 auto;
-  }
-
-  .legend-wrapper {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin-top: 10px;
-    margin-left: 110px;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
-
   .legend-color {
     width: 20px;
     height: 20px;
@@ -881,9 +862,43 @@ h1 {
     background-color: #3bc42e;
   }
 
+  .legend-div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 50%;
+    margin-bottom: 5px;
+    padding-left: 0px;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 auto;
+    -ms-flex: 0 auto;
+    flex: 0 auto;
+  }
+
   .legend-title {
     margin-left: 5px;
     font-family: Lato, sans-serif;
+  }
+
+  .legend-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 10px;
+    margin-left: 110px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 
   .chart-div {
@@ -1307,7 +1322,7 @@ h1 {
       text-align: center;
     }
     .heading-2 {
-      font-size: 24px;
+      font-size: 22px;
     }
     .section-text {
       padding-right: 30px;
@@ -1370,6 +1385,9 @@ h1 {
       -webkit-flex-basis: 100%;
       -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
+    }
+    .hero-header {
+        font-size: 28px;
     }
   }
 
