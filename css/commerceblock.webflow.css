@@ -1563,7 +1563,7 @@ h1 {
     }
 
   /* Make sure all circles are at the same spot */
-    .roadmap-left::after, .right::after {
+    .roadmap-left::after, .roadmap-right::after {
       left: 15px;
     }
 
