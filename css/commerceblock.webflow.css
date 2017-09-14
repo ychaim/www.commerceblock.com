@@ -206,14 +206,17 @@ h1 {
     font-weight: 300;
   }
 
+  .image-3 {
+    width: 50%;
+  }
+
   .btn-play {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    width: 70px;
-    height: 70px;
-    margin-top: 24px;
+    width: 30px;
+    height: 30px;
     padding-left: 5px;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
