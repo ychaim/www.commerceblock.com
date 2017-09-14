@@ -40,8 +40,8 @@ h1 {
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    background: -webkit-linear-gradient(270deg, rgba(37, 140, 66, 0.95), #000);
-    background: linear-gradient(180deg, rgba(37, 140, 66, 0.95), #000);
+    background: -webkit-linear-gradient(270deg, rgba(30, 110, 53, .82), #000);
+    background: linear-gradient(180deg, rgba(30, 110, 53, .82), #000);
     background-position: 0px 0px, 0px 0px;
     background-size: auto, cover;
     background-attachment: scroll, fixed;
