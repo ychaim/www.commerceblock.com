@@ -1,3 +1,10 @@
+.section {
+  padding: 0 40px;
+}
+.gray-section {
+  background-color: #f9f9f9
+}
+
 h1 {
     margin-top: 20px;
     margin-bottom: 10px;
@@ -1323,6 +1330,7 @@ h1 {
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column;
+      align-items: center;
     }
     .team-parent {
       -webkit-flex-wrap: wrap;
