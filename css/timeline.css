@@ -1514,7 +1514,7 @@ p {
 
 .timeline {
   position: relative;
-  max-width: 900px;
+  max-width: 1050px;
   margin: 0 auto;
   display: flex;
   height: 300px;
@@ -1633,7 +1633,7 @@ p {
   color: green;
 }
 
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1150px) {
   /* ROADMAP CSS vertical - big */
   #roadmap {
     position: relative;
