@@ -38,7 +38,7 @@ p {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  /*height: 100vh;*/
+  min-height: 100vh;
   padding-bottom: 36px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
