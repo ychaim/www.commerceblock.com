@@ -54,7 +54,8 @@ p {
   background-position: 0px 0px, 0px 0px;
   background-size: auto, cover;
   background-attachment: scroll, fixed;
-  padding: 25px;
+  padding-right: 25px;
+  padding-left: 25px;
 }
 
 .footer {
