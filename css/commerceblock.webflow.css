@@ -38,7 +38,7 @@ p {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 100vh;
+  /*height: 100vh;*/
   padding-bottom: 36px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -254,6 +254,10 @@ p {
   align-self: center;
 }
 
+/*.token-sale-button {
+  margin-right: 20px;
+}*/
+
 .triangle {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
@@ -281,6 +285,15 @@ p {
   -ms-flex: 0 auto;
   flex: 0 auto;
   text-align: center;
+}
+
+.hero-buttons {
+  display: flex;*/
+  width: 100%;
+  max-width: 600px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
 .video-link {
@@ -610,6 +623,8 @@ p {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  max-width: 1060px;
+  margin: auto;
 }
 
 .howitworks-item.right {
@@ -780,7 +795,6 @@ p {
 }
 
 .token-button.cta.white {
-  margin-left: 20px;
   border: 2px solid #fff;
   background-color: hsla(0, 0%, 100%, 0);
 }
@@ -1010,6 +1024,8 @@ p {
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
+  max-width: 1060px;
+  margin: auto;
 }
 
 .team-wrapper {
@@ -1019,6 +1035,7 @@ p {
   display: flex;
   margin-right: 5px;
   margin-left: 5px;
+  margin-bottom: 40px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -1229,11 +1246,9 @@ p {
     -ms-flex-preferred-size: 33%;
     flex-basis: 32%;
   }
-
   .advisors-wrapper {
     flex-basis: 33%;
   }
-
   .team-title {
     text-align: center;
   }
@@ -1362,7 +1377,6 @@ p {
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
   }
-
   .advisors-wrapper {
     flex-basis: 50%;
   }
@@ -1379,11 +1393,16 @@ p {
     text-align: center;
   }
   .heading-2 {
-    font-size: 22px;
+    font-size: 17px;
+    line-height: 31px;
   }
   .section-text {
     padding-right: 30px;
     padding-left: 30px;
+  }
+
+  .triangle {
+    display: none;
   }
   .heading-4 {
     font-size: 32px;
@@ -1443,13 +1462,15 @@ p {
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
   }
-
   .advisors-wrapper {
     flex-basis: 100%;
   }
-
   .hero-header {
-    font-size: 28px;
+    font-size: 20px;
+    line-height: 33px;
+  }
+  .video-link {
+    justify-content: center;
   }
 }
 
