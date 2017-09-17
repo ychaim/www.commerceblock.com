@@ -1402,6 +1402,9 @@ p {
   .hero-title {
     text-align: center;
   }
+  .hero-buttons {
+    justify-content: center;
+  }
   .heading-2 {
     font-size: 17px;
     line-height: 31px;
