@@ -54,6 +54,7 @@ p {
   background-position: 0px 0px, 0px 0px;
   background-size: auto, cover;
   background-attachment: scroll, fixed;
+  padding: 25px;
 }
 
 .footer {
@@ -289,11 +290,15 @@ p {
 
 .hero-buttons {
   display: flex;*/
-  width: 100%;
+  /*width: 100%;
   max-width: 600px;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: auto;
+  margin: auto;*/
+}
+
+.hero-button-wrapper {
+  width: auto;
 }
 
 .video-link {

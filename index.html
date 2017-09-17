@@ -80,8 +80,12 @@
         <h1 class="hero-header" data-ix="scroll-up">CommerceBlock is a public blockchain infrastructure company</h1>
         <h2 class="heading-2" data-ix="scroll-up">We are building the first technology platform to bring a combination of trust minimal trade, decentralized contract execution, on-chain derivatives and asset backed token issuance to public blockchains.</h2>
         <div class="hero-buttons">
-          <a class="cta token-button w-button token-sale-button" href="#token-sale">Get early token sale access</a>
-          <a class="cta token-button w-button white" href="commerceblock-whitepaper.pdf" target="_blank">Read our whitepaper</a>
+          <div class="hero-button-wrapper">
+            <a class="cta token-button w-button token-sale-button" href="#token-sale">Get early token sale access</a>
+          </div>
+          <div class="hero-button-wrapper">
+            <a class="cta token-button w-button white" href="commerceblock-whitepaper.pdf" target="_blank">Read our whitepaper</a>
+          </div>
         </div>
         <a class="w-inline-block w-lightbox video-link" href="#">
           <div class="btn-play"><img class="image-3" src="images/triangle.png"></div>
@@ -110,31 +114,31 @@
 
       <div class="section gray-section" id="how">
         <!-- <div class="howitworks-wrapper" data-ix="show-white-menu"> -->
-          <div class="section-title" data-ix="show-white-menu">
-            <h3>How it Works</h3>
-            <div class="title-divider"></div>
+        <div class="section-title" data-ix="show-white-menu">
+          <h3>How it Works</h3>
+          <div class="title-divider"></div>
+        </div>
+        <div class="howitworks-item" data-ix="show-white-menu"><img class="image-2" sizes="(max-width: 479px) 100vw, 367px" src="images/Group-16.png" srcset="images/Group-16.png 500w, images/Group-16.png 658w" width="367">
+          <div class="how-title">
+            <h4 class="heading-5">Cryptography</h4>
+            <p class="paragraph">CommerceBlock has a suite of tools for both end users and engineers to construct and manage smart contracts with escrow and complex trade flows. Our clients will have access to protocols that use advanced cryptography such as zero knowledge
+              proofs and homomorphic encryption. We have architected our platform to avoid being a central point of failure: all sensitive trade details and customer funds are managed on the client side.</p>
           </div>
-          <div class="howitworks-item" data-ix="show-white-menu"><img class="image-2" sizes="(max-width: 479px) 100vw, 367px" src="images/Group-16.png" srcset="images/Group-16.png 500w, images/Group-16.png 658w" width="367">
-            <div class="how-title">
-              <h4 class="heading-5">Cryptography</h4>
-              <p class="paragraph">CommerceBlock has a suite of tools for both end users and engineers to construct and manage smart contracts with escrow and complex trade flows. Our clients will have access to protocols that use advanced cryptography such as zero knowledge
-                proofs and homomorphic encryption. We have architected our platform to avoid being a central point of failure: all sensitive trade details and customer funds are managed on the client side.</p>
-            </div>
+        </div>
+        <div class="howitworks-item right" data-ix="show-white-menu"><img sizes="(max-width: 479px) 100vw, 337px" src="images/Group-17.png" srcset="images/Group-17.png 500w, images/Group-17.png 616w" width="337">
+          <div class="how-title">
+            <h4 class="heading-5">Decentralization and Privacy</h4>
+            <p class="paragraph-2">We understand your needs. Nobody wants their business logic posted on a public blockchain for competition to see. All business logic and contract details are hidden in zero knowledge on the most secure public blockchains in the world. Enjoy
+              privacy and decentralized security at the same time.</p>
           </div>
-          <div class="howitworks-item right" data-ix="show-white-menu"><img sizes="(max-width: 479px) 100vw, 337px" src="images/Group-17.png" srcset="images/Group-17.png 500w, images/Group-17.png 616w" width="337">
-            <div class="how-title">
-              <h4 class="heading-5">Decentralization and Privacy</h4>
-              <p class="paragraph-2">We understand your needs. Nobody wants their business logic posted on a public blockchain for competition to see. All business logic and contract details are hidden in zero knowledge on the most secure public blockchains in the world. Enjoy
-                privacy and decentralized security at the same time.</p>
-            </div>
+        </div>
+        <div class="howitworks-item" data-ix="show-white-menu"><img class="image-2" sizes="(max-width: 479px) 100vw, 367px" src="images/Group-20.png" srcset="images/Group-20.png 500w, images/Group-20.png 642w" width="367">
+          <div class="how-title">
+            <h4 class="heading-5">Frictionless Commerce</h4>
+            <p class="paragraph">Limited by a lack of liquidity, transparency and accountability between centrally managed financial institutions and their customers, capital markets do not operate as freely and efficiently as possible. By democratizing access to advanced
+              smart contract tooling on public blockchains, CommerceBlock disintermediates and makes more efficient global trade. Now anyone can participate in online commerce without asking permission.</p>
           </div>
-          <div class="howitworks-item" data-ix="show-white-menu"><img class="image-2" sizes="(max-width: 479px) 100vw, 367px" src="images/Group-20.png" srcset="images/Group-20.png 500w, images/Group-20.png 642w" width="367">
-            <div class="how-title">
-              <h4 class="heading-5">Frictionless Commerce</h4>
-              <p class="paragraph">Limited by a lack of liquidity, transparency and accountability between centrally managed financial institutions and their customers, capital markets do not operate as freely and efficiently as possible. By democratizing access to advanced
-                smart contract tooling on public blockchains, CommerceBlock disintermediates and makes more efficient global trade. Now anyone can participate in online commerce without asking permission.</p>
-            </div>
-          </div>
+        </div>
         <!-- </div> -->
       </div>
       <div class="section" id="roadmap">
@@ -275,14 +279,14 @@
               <a class="team-link" href="https://www.linkedin.com/in/michaelpole" target="_blank">&#xf0e1;</a>
             </div>
           </div>
-          <div class="team-wrapper" ><img class="team-photo" id="team-photo" src="images/team-tobias.jpg" width="200" height="200">
+          <div class="team-wrapper"><img class="team-photo" id="team-photo" src="images/team-tobias.jpg" width="200" height="200">
             <h3 class="team-name">Tobias Straessle</h3>
             <div class="team-title">Corporate Advisor</div>
             <div class="team-linkswrapper">
               <a class="team-link" href="https://www.linkedin.com/in/tobias-straessle-95204b2" target="_blank">&#xf0e1;</a>
             </div>
           </div>
-        </br/>
+          </br/>
           <div class="team-wrapper"><img class="team-photo" id="team-photo" src="images/team-peter.jpg" width="200" height="200">
             <h3 class="team-name">Peter Bergstrom</h3>
             <div class="team-title">ICO Advisor</div>
@@ -394,24 +398,24 @@
       </div>
       <div class="section gray-section" id="token-sale">
         <div class="token-hero">
-            <div class="div-block"><img class="token-sale-icon" src="images/commerce-token.svg">
-              <h1 class="token-header">CommerceBlock Token Sale is coming soon!</h1>
-              <h2 class="token-subheader">Sign up now for an early access opportunity</h2>
-              <div class="w-form">
-                <form class="token-form" data-name="Token Form" id="wf-form-Token-Form" name="wf-form-Token-Form">
-                  <input class="token-form-field w-input" data-name="email" id="email" maxlength="256" name="email" placeholder="Enter your email" required="required" type="email">
-                  <input class="token-button w-button" data-wait="Please wait..." type="submit" value="Get early Token sale access">
-                </form>
-                <div class="w-form-done">
-                  <div>Thank you! Your submission has been received!</div>
-                </div>
-                <div class="w-form-fail">
-                  <div>Oops! Something went wrong while submitting the form.</div>
-                </div>
+          <div class="div-block"><img class="token-sale-icon" src="images/commerce-token.svg">
+            <h1 class="token-header">CommerceBlock Token Sale is coming soon!</h1>
+            <h2 class="token-subheader">Sign up now for an early access opportunity</h2>
+            <div class="w-form">
+              <form class="token-form" data-name="Token Form" id="wf-form-Token-Form" name="wf-form-Token-Form">
+                <input class="token-form-field w-input" data-name="email" id="email" maxlength="256" name="email" placeholder="Enter your email" required="required" type="email">
+                <input class="token-button w-button" data-wait="Please wait..." type="submit" value="Get early Token sale access">
+              </form>
+              <div class="w-form-done">
+                <div>Thank you! Your submission has been received!</div>
+              </div>
+              <div class="w-form-fail">
+                <div>Oops! Something went wrong while submitting the form.</div>
               </div>
             </div>
-            <!-- <a class="link-block-2 w-inline-block" data-ix="arrow-animation" href="#tokenomics"><img class="triangle" src="images/triangle-black.svg"></a> -->
           </div>
+          <!-- <a class="link-block-2 w-inline-block" data-ix="arrow-animation" href="#tokenomics"><img class="triangle" src="images/triangle-black.svg"></a> -->
+        </div>
       </div>
       <div class="section" id="follow">
         <div class="section-title">
