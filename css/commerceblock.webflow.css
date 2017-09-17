@@ -256,7 +256,9 @@ p {
   align-self: center;
 }
 
-
+.token-sale-icon {
+  margin-top: 30px
+}
 /*.token-sale-button {
   margin-right: 20px;
 }*/
@@ -293,7 +295,6 @@ p {
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
-
   /*width: 100%;
   max-width: 600px;
   justify-content: space-between;
@@ -531,7 +532,7 @@ p {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
 }
 
 .contact-title {
@@ -702,6 +703,7 @@ p {
 
 .token-header {
   color: #333;
+  font-size: 40px;
 }
 
 .heading-6 {
@@ -989,6 +991,10 @@ p {
 
 .section {
   margin-bottom: 40px;
+}
+
+.token-sale-container-section {
+  margin-bottom: 20px;
 }
 
 .link-block-2 {
@@ -1503,7 +1509,11 @@ p {
 
 #roadmap {
   position: relative;
-  width: 100%
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
 }
 
 
@@ -1511,8 +1521,11 @@ p {
 
 .timeline {
   position: relative;
-  max-width: 1200px;
+  max-width: 1050px;
   margin: 0 auto;
+  display: flex;
+  height: 300px;
+  left: -65px;
 }
 
 
@@ -1521,13 +1534,12 @@ p {
 .timeline::after {
   content: '';
   position: absolute;
-  width: 1px;
-  border-left: 3px dotted black;
-  top: 20px;
-  bottom: 0;
-  left: calc(50% + 3px);
+  width: calc(100% - 140px);
+  border-top: 3px dotted black;
+  top: 111px;
+  left: 127px;
   margin-left: -3px;
-  height: 90%;
+  height: 1px;
 }
 
 
@@ -1537,8 +1549,9 @@ p {
   padding: 10px 40px;
   position: relative;
   background-color: inherit;
-  width: 50%;
+  width: calc(100% / 8);
   height: 100px;
+  position: relative;
 }
 
 
@@ -1552,30 +1565,36 @@ p {
   right: -17px;
   background-color: white;
   border: 4px solid black;
-  top: 15px;
+  top: 95px;
   border-radius: 50%;
   z-index: 1;
 }
 
 
+/* Fix the circle for containers on the right side */
+
+.roadmap-container:nth-of-type(even)::after {
+  top: -55px;
+}
+
+
 /* Place the container to the left */
 
-.roadmap-left {
+.roadmap-container:nth-of-type(odd) {
   left: 0;
-  text-align: right;
 }
 
 
 /* Place the container to the right */
 
-.roadmap-right {
-  left: 50%;
+.roadmap-container:nth-of-type(even) {
+  bottom: -150px;
 }
 
 
 /* Add arrows to the left container (pointing right) */
 
-.roadmap-left::before {
+.roadmap-container:nth-of-type(odd)::before {
   /*content: " ";*/
   height: 0;
   position: absolute;
@@ -1591,7 +1610,7 @@ p {
 
 /* Add arrows to the right container (pointing left) */
 
-.roadmap-right::before {
+.roadmap-container:nth-of-type(even)::before {
   /*content: " ";*/
   height: 0;
   position: absolute;
@@ -1605,19 +1624,12 @@ p {
 }
 
 
-/* Fix the circle for containers on the right side */
-
-.roadmap-right::after {
-  left: -16px;
-}
-
-
 /* The actual content */
 
 .roadmap-content {
   padding: 0 30px;
   position: relative;
-  border-radius: 6px;
+  width: 190px;
 }
 
 .roadmap-content h2 {
@@ -1626,6 +1638,111 @@ p {
 
 .roadmap-content p {
   color: green;
+}
+
+@media all and (max-width: 1150px) {
+  /* ROADMAP CSS vertical - big */
+  #roadmap {
+    position: relative;
+    width: 100%
+  }
+  /* The actual timeline (the vertical ruler) */
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: block;
+    height: unset;
+    left: 0;
+  }
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    border-left: 3px dotted black;
+    top: 20px;
+    bottom: 0;
+    left: calc(50% + 3px);
+    margin-left: -3px;
+    height: 90%;
+  }
+  /* Container around content */
+  .roadmap-container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    height: 100px;
+  }
+  /* The circles on the timeline */
+  .roadmap-container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid black;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  /* Place the container to the left */
+  .roadmap-container:nth-of-type(odd) {
+    left: 0;
+    text-align: right;
+    top: 0;
+  }
+  /* Place the container to the right */
+  .roadmap-container:nth-of-type(even) {
+    left: 50%;
+    bottom: 0;
+  }
+  /* Add arrows to the left container (pointing right) */
+  .roadmap-container:nth-of-type(odd)::before {
+    /*content: " ";*/
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid green;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent green;
+  }
+  /* Add arrows to the right container (pointing left) */
+  .roadmap-container:nth-of-type(even)::before {
+    /*content: " ";*/
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid green;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent green transparent transparent;
+  }
+  /* Fix the circle for containers on the right side */
+  .roadmap-container:nth-of-type(even)::after {
+    left: -16px;
+    top: 13px;
+  }
+  /* The actual content */
+  .roadmap-content {
+    padding: 0 30px;
+    position: relative;
+    border-radius: 6px;
+    width: auto;
+  }
+  .roadmap-content h2 {
+    margin-top: 0;
+  }
+  .roadmap-content p {
+    color: green;
+  }
 }
 
 
@@ -1649,15 +1766,15 @@ p {
     border-width: 10px 10px 10px 0;
     border-color: transparent green transparent transparent;
   }
-  .roadmap-left {
+  .roadmap-container:nth-of-type(odd) {
     text-align: left;
   }
   /* Make sure all circles are at the same spot */
-  .roadmap-left::after, .roadmap-right::after {
+  .roadmap-container:nth-of-type(odd)::after, .roadmap-container:nth-of-type(even)::after {
     left: 15px;
   }
   /* Make all right containers behave like the left ones */
-  .roadmap-right {
+  .roadmap-container:nth-of-type(even) {
     left: 0%;
   }
 }
