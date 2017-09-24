@@ -257,7 +257,7 @@ p {
 }
 
 .token-sale-icon {
-  margin-top: 30px
+  /* margin-top: 30px */
 }
 /*.token-sale-button {
   margin-right: 20px;
@@ -732,6 +732,8 @@ p {
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .token-form-field {
@@ -792,6 +794,13 @@ p {
 .token-button.cta.white {
   border: 2px solid #fff;
   background-color: hsla(0, 0%, 100%, 0);
+}
+
+.token-subscription-response {
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  visibility: hidden;
 }
 
 .div-block {
@@ -1421,7 +1430,7 @@ p {
     width: 100%;
   }
   .token-form {
-    width: 100%;
+    width: 90%;
   }
   .token-subheader {
     font-size: 28px;

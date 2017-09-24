@@ -892,9 +892,6 @@
     var inApp = Webflow.env();
     var listening;
 
-    // MailChimp domains: list-manage.com + mirrors
-    var chimpRegex = /list-manage[1-9]?.com/i;
-
     var disconnected = _.debounce(function() {
       alert('Oops! This page has improperly configured forms. Please contact your website administrator to fix this issue.');
     }, 100);
@@ -931,9 +928,6 @@
       var action = data.action = $el.attr('action');
       data.handler = null;
       data.redirect = $el.attr('data-redirect');
-
-      // MailChimp form
-      if (chimpRegex.test(action)) { data.handler = submitMailChimp; return; }
 
       // Custom form action
       if (action) return;
@@ -1057,15 +1051,41 @@
 
       if (payload.name === 'Token Form') {
         const form = $('#mc-embedded-subscribe-form')
-        console.log($('#mce-EMAIL').val())
-        console.log(form)
         $('#mce-EMAIL').val(payload.fields.email)
-        console.log($('#mce-EMAIL').val())
-        form.submit();
-        data.success = true;
-        afterSubmit(data);
+        $('#token-subscription-response').css('visibility', 'hidden');
+        $.ajax({
+            type: form.attr('method'),
+            url: form.attr('action'),
+            data: form.serialize(),
+            cache       : false,
+            dataType    : 'json',
+            contentType: 'application/json; charset=utf-8',
+            error : function(err) {
+              reset(data);
+              console.log(err);
+            },
+            success : function(response) {
+              reset(data);
+              console.log(response);
+              if (response.result != 'success') {
+                var errorMessage = 'Something went wrong while processing your request, please try again later.';
+                if (response.msg && response.msg.indexOf('The domain portion') >= 0) {
+                  errorMessage = 'Please provide a valid email address.';
+                } else if (response.msg && response.msg.indexOf('is already subscribed') >= 0) {
+                  errorMessage = 'Email is already subscribed, Thank you!';
+                } else if (respones.msg && response.msg.indexOf('has too many') >= 0) {
+                  errorMessage = 'Recipient has too many recent subscription requests, please try again later.';
+                }
+                $('#token-subscription-response').text(errorMessage);
+                $('#token-subscription-response').css('visibility', 'visible');
+              } else {
+                $('#token-subscription-response').text('Thank you, your submission has been received!')
+                $('#token-subscription-response').css('visibility', 'visible');
+              }
+            }
+        });
       } else {
-        var url = "https://85hv1luk2g.execute-api.us-east-1.amazonaws.com/prod/contact";
+        var url = 'https://85hv1luk2g.execute-api.us-east-1.amazonaws.com/prod/contact';
         var msg = {
             source: payload.name,
             name: payload.fields.name,
@@ -1086,65 +1106,6 @@
             afterSubmit(data);
         });
       }
-    }
-
-    // Submit form to MailChimp
-    function submitMailChimp(data) {
-      reset(data);
-
-      var form = data.form;
-      var payload = {};
-
-      // Skip Ajax submission if http/s mismatch, fallback to POST instead
-      if (/^https/.test(loc.href) && !/^https/.test(data.action)) {
-        form.attr('method', 'post');
-        return;
-      }
-
-      preventDefault(data);
-
-      // Find & populate all fields
-      var status = findFields(form, payload);
-      if (status) return alert(status);
-
-      // Disable submit button
-      disableBtn(data);
-
-      // Use special format for MailChimp params
-      var fullName;
-      _.each(payload, function(value, key) {
-        if (emailField.test(key)) payload.EMAIL = value;
-        if (/^((full[ _-]?)?name)$/i.test(key)) fullName = value;
-        if (/^(first[ _-]?name)$/i.test(key)) payload.FNAME = value;
-        if (/^(last[ _-]?name)$/i.test(key)) payload.LNAME = value;
-      });
-
-      if (fullName && !payload.FNAME) {
-        fullName = fullName.split(' ');
-        payload.FNAME = fullName[0];
-        payload.LNAME = payload.LNAME || fullName[1];
-      }
-
-      // Use the (undocumented) MailChimp jsonp api
-      var url = data.action.replace('/post?', '/post-json?') + '&c=?';
-      // Add special param to prevent bot signups
-      var userId = url.indexOf('u=') + 2;
-      userId = url.substring(userId, url.indexOf('&', userId));
-      var listId = url.indexOf('id=') + 3;
-      listId = url.substring(listId, url.indexOf('&', listId));
-      payload['b_' + userId + '_' + listId] = '';
-
-      $.ajax({
-        url: url,
-        data: payload,
-        dataType: 'jsonp'
-      }).done(function(resp) {
-        data.success = (resp.result === 'success' || /already/.test(resp.msg));
-        if (!data.success) console.info('MailChimp error: ' + resp.msg);
-        afterSubmit(data);
-      }).fail(function() {
-        afterSubmit(data);
-      });
     }
 
     // Common callback which runs after all Ajax submissions
