@@ -1073,7 +1073,7 @@
                   errorMessage = 'Please provide a valid email address.';
                 } else if (response.msg && response.msg.indexOf('is already subscribed') >= 0) {
                   errorMessage = 'Email is already subscribed, Thank you!';
-                } else if (respones.msg && response.msg.indexOf('has too many') >= 0) {
+                } else if (response.msg && response.msg.indexOf('has too many') >= 0) {
                   errorMessage = 'Recipient has too many recent subscription requests, please try again later.';
                 }
                 $('#token-subscription-response').text(errorMessage);
