@@ -259,6 +259,8 @@ p {
 .token-sale-icon {
   /* margin-top: 30px */
 }
+
+
 /*.token-sale-button {
   margin-right: 20px;
 }*/
@@ -303,8 +305,8 @@ p {
 }
 
 .hero-button-wrapper {
-  min-width: 280px;
-  justify-content: center;
+  min-width: 220px;
+  /*justify-content: center;*/
   display: flex;
 }
 
@@ -391,6 +393,7 @@ p {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .link-block {
@@ -422,6 +425,7 @@ p {
   font-size: 20px;
   font-weight: 400;
   margin-left: 10px;
+  margin-top: 10px;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -805,29 +809,26 @@ p {
 
 .subscribe-hero-form {
   position: relative;
-  margin: 20px -20px -20px;
-  padding: 15px;
-  border-radius: 0 0 6px 6px;
+  margin: 40px 0 0 0;
+  display: flex;
 }
 
 .subscribe-input {
   padding: 0 16px;
   width: 100%;
-  height: 35px;
+  height: 55px;
   font-size: 15px;
-  border: 1px solid;
-  border-radius: 20px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px #f8f8f8;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px #f8f8f8;
+  border: none;
+  /*border-radius: 20px;*/
+  border-radius: 20px 0 0 20px;
+  max-width: 490px;
+  /*-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px #f8f8f8;*/
+  /*box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px #f8f8f8;*/
 }
 
 .subscribe-submit {
-  display: block;
-  position: absolute;
-  top: 15px;
-  right: 15px;
   padding-left: 15px;
-  height: 35px;
+  height: 55px;
   width: 140px;
   background: #258c42;
   border: 1px solid;
