@@ -1025,6 +1025,8 @@
 
     // Submit form to Webflow
     function submitWebflow(data) {
+
+        console.log(data);
       reset(data);
 
       var form = data.form;
@@ -1049,10 +1051,11 @@
       // NOTE: If this site is exported, the HTML tag must retain the data-wf-site attribute for forms to work
       if (!siteId) { afterSubmit(data); return; }
 
-      if (payload.name === 'Token Form') {
+      if (payload.name === 'Token Form' || payload.name === 'subscribe-hero-form') {
+        const errorDivName = payload.name === 'Token Form' ? '#token-subscription-response' : '#hero-subscription-response';
         const form = $('#mc-embedded-subscribe-form')
         $('#mce-EMAIL').val(payload.fields.email)
-        $('#token-subscription-response').css('visibility', 'hidden');
+        $(errorDivName).css('visibility', 'hidden');
         $.ajax({
             type: form.attr('method'),
             url: form.attr('action'),
@@ -1076,11 +1079,11 @@
                 } else if (response.msg && response.msg.indexOf('has too many') >= 0) {
                   errorMessage = 'Recipient has too many recent subscription requests, please try again later.';
                 }
-                $('#token-subscription-response').text(errorMessage);
-                $('#token-subscription-response').css('visibility', 'visible');
+                $(errorDivName).text(errorMessage);
+                $(errorDivName).css('visibility', 'visible');
               } else {
-                $('#token-subscription-response').text('Thank you, your submission has been received!')
-                $('#token-subscription-response').css('visibility', 'visible');
+                $(errorDivName).text('Thank you, your submission has been received!')
+                $(errorDivName).css('visibility', 'visible');
               }
             }
         });
