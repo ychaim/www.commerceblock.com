@@ -807,6 +807,14 @@ p {
   visibility: hidden;
 }
 
+.hero-subscription-response {
+  padding: 10px 0px;
+  text-align: left;
+  font-size: 18px;
+  visibility: hidden;
+  color: #fff
+}
+
 .subscribe-hero-form {
   position: relative;
   margin: 40px 0 0 0;
