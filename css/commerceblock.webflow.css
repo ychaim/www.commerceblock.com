@@ -1520,6 +1520,10 @@ p {
   .video-link {
     justify-content: center;
   }
+  .subscribe-submit {
+    width: 100px;
+    font-size: 16px;
+  }
 }
 
 @font-face {
