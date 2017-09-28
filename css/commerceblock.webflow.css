@@ -835,21 +835,10 @@ p {
 }
 
 .subscribe-submit {
-  padding-left: 15px;
   height: 55px;
   width: 140px;
-  background: #258c42;
-  border: 1px solid;
-  border-color: #207438;
-  border-radius: 5px;
-  cursor: pointer;
-  text-shadow: none;
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
   font-family: Lato, sans-serif;
   font-size: 18px;
-  /* position: relative; */
-  /* left: -40px; */
 }
 
 .div-block {
