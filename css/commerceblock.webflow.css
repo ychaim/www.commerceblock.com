@@ -426,11 +426,10 @@ p {
   color: #fff;
   font-size: 20px;
   font-weight: 400;
-  margin-left: 10px;
-  margin-top: 10px;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  opacity: .7;
 }
 
 
@@ -446,9 +445,10 @@ p {
 /* } */
 
 .link-block:hover {
-  -webkit-transform: translate(0px, -10px);
+  /*-webkit-transform: translate(0px, -10px);
   -ms-transform: translate(0px, -10px);
-  transform: translate(0px, -10px);
+  transform: translate(0px, -10px);*/
+  opacity: 1;
 }
 
 .link-block.generic {
@@ -820,7 +820,9 @@ p {
   text-align: left;
   font-size: 18px;
   visibility: hidden;
-  color: #fff
+  color: #fff;
+  position: relative;
+  top: 37px;
 }
 
 .subscribe-hero-form {
@@ -848,6 +850,19 @@ p {
   width: 140px;
   font-family: Lato, sans-serif;
   font-size: 18px;
+}
+
+.social-hero-button {
+  font-family: Lato, sans-serif;
+  color: #fff;
+  font-size: 4px;
+  font-weight: 400;
+  text-decoration: none;
+  text-align: center;
+  height: auto;
+  width: auto;
+  margin-right: 25px;
+  margin-top: 20px;
 }
 
 .div-block {
@@ -1324,6 +1339,9 @@ p {
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+  }
+  .link-logo {
+    font-size: 30px;
   }
   .how-title {
     margin-top: 20px;
