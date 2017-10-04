@@ -479,7 +479,7 @@ p {
   -ms-flex-item-align: center;
   align-self: center;
   font-family: Fontawesome, sans-serif;
-  font-size: 42px;
+  font-size: 27px;
 }
 
 .link-text {
@@ -1340,9 +1340,7 @@ p {
     -ms-flex-pack: start;
     justify-content: flex-start;
   }
-  .link-logo {
-    font-size: 30px;
-  }
+
   .how-title {
     margin-top: 20px;
     padding-right: 20px;
