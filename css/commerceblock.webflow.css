@@ -432,6 +432,31 @@ p {
   opacity: .7;
 }
 
+#features-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  flex-basis: 19%;
+  display: flex;
+      margin-bottom: 110px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+}
+
+.feature-item img {
+  max-width: 100px;
+}
+
+.feature-title {
+  text-align: center;
+  height: 0;
+}
+
 
 /*
   @@media {
@@ -1340,7 +1365,6 @@ p {
     -ms-flex-pack: start;
     justify-content: flex-start;
   }
-
   .how-title {
     margin-top: 20px;
     padding-right: 20px;
