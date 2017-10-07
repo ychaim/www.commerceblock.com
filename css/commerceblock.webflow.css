@@ -426,10 +426,11 @@ p {
   color: #fff;
   font-size: 20px;
   font-weight: 400;
+  margin-left: 10px;
+  margin-top: 10px;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  opacity: .7;
 }
 
 #features-list {
@@ -457,6 +458,53 @@ p {
   height: 0;
 }
 
+.link-block-mini {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 130px;
+    height: 130px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transition: -webkit-transform 300ms ease;
+    transition: -webkit-transform 300ms ease;
+    transition: transform 300ms ease;
+    transition: transform 300ms ease, -webkit-transform 300ms ease;
+    font-family: Lato, sans-serif;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    opacity: .7;
+  }
+
+  .link-block-mini:hover {
+    opacity: 1;
+  }
+
+  .link-logo-mini {
+    padding-bottom: 20px;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-family: Fontawesome, sans-serif;
+    font-size: 27px;
+  }
+
 
 /*
   @@media {
@@ -470,10 +518,9 @@ p {
 /* } */
 
 .link-block:hover {
-  /*-webkit-transform: translate(0px, -10px);
+  -webkit-transform: translate(0px, -10px);
   -ms-transform: translate(0px, -10px);
-  transform: translate(0px, -10px);*/
-  opacity: 1;
+  transform: translate(0px, -10px);
 }
 
 .link-block.generic {
@@ -504,7 +551,7 @@ p {
   -ms-flex-item-align: center;
   align-self: center;
   font-family: Fontawesome, sans-serif;
-  font-size: 27px;
+  font-size: 42px;
 }
 
 .link-text {
@@ -878,17 +925,17 @@ p {
 }
 
 .social-hero-button {
-  font-family: Lato, sans-serif;
-  color: #fff;
-  font-size: 4px;
-  font-weight: 400;
-  text-decoration: none;
-  text-align: center;
-  height: auto;
-  width: auto;
-  margin-right: 25px;
-  margin-top: 20px;
-}
+    font-family: Lato, sans-serif;
+    color: #fff;
+    font-size: 4px;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    height: auto;
+    width: auto;
+    margin-right: 25px;
+    margin-top: 20px;
+  }
 
 .div-block {
   display: -webkit-box;
