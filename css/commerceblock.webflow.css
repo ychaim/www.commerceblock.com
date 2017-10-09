@@ -363,6 +363,7 @@ p {
 .press-section {
   text-align: center;
   padding: 30px 0;
+  width: 100%; 
 }
 
 .press-list {
