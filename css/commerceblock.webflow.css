@@ -363,7 +363,7 @@ p {
 .press-section {
   text-align: center;
   padding: 30px 0;
-  width: 100%; 
+  width: 100%;
 }
 
 .press-list {
@@ -377,6 +377,8 @@ p {
 .press-item {
   flex-basis: 51%;
   max-width: 240px;
+  margin-top: 10px;
+  padding: 15px;
 }
 
 .partners-list {
