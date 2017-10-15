@@ -66,6 +66,9 @@ p {
   color: #fff;
   text-align: center;
 }
+#privacy {
+  color: white !important;
+}
 
 .main-section {
   display: -webkit-box;
