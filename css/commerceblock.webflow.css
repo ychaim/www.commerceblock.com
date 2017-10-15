@@ -65,6 +65,14 @@ p {
   font-family: Lato, sans-serif;
   color: #fff;
   text-align: center;
+  display: flex;
+  padding: 10px 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer div {
+  padding: 0 10px;
 }
 #privacy {
   color: white !important;
