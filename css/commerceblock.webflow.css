@@ -74,8 +74,24 @@ p {
 .footer div {
   padding: 0 10px;
 }
+
 #privacy {
   color: white !important;
+}
+
+#telegram-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.7;
+}
+
+#telegram-fixed:hover {
+  opacity: 1;
+}
+
+#telegram-fixed>img {
+  height: 50px;
 }
 
 .main-section {
