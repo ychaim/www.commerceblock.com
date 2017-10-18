@@ -81,9 +81,10 @@ p {
 
 #telegram-fixed {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 10px;
+  right: 10px;
   opacity: 0.7;
+  z-index: 999;
 }
 
 #telegram-fixed:hover {
@@ -91,7 +92,7 @@ p {
 }
 
 #telegram-fixed>img {
-  height: 50px;
+  height: 65px;
 }
 
 .main-section {
