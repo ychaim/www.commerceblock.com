@@ -1001,7 +1001,6 @@ p {
   width: auto;
   margin-right: 25px;
   margin-top: 20px;
-  padding: 2px;
 }
 
 .div-block {
@@ -1099,6 +1098,7 @@ p {
   height: 20px;
   border-radius: 50px;
   background-color: #36c25d;
+  flex-shrink: 0;
 }
 
 .legend-color.dark-green {
@@ -1126,7 +1126,7 @@ p {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 50%;
+  /*width: 50%;*/
   margin-bottom: 5px;
   padding-left: 0px;
   -webkit-box-pack: start;
@@ -1150,7 +1150,7 @@ p {
   display: -ms-flexbox;
   display: flex;
   margin-top: 10px;
-  margin-left: 110px;
+  /*margin-left: 110px;*/
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
