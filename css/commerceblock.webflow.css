@@ -1980,3 +1980,14 @@ p {
     left: 0%;
   }
 }
+
+
+/* WHITELIST */
+
+.token-header {
+  color: white;
+}
+
+.token-subheader {
+  color: white;
+}
