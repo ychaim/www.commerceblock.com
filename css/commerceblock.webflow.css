@@ -999,8 +999,10 @@ p {
   text-align: center;
   height: auto;
   width: auto;
-  margin-right: 25px;
-  margin-top: 20px;
+  /*margin-right: 25px;*/
+  /*margin-top: 20px;*/
+  padding: 10px;
+  line-height: 5px;
 }
 
 .div-block {
