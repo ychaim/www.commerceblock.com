@@ -1051,8 +1051,10 @@
       // NOTE: If this site is exported, the HTML tag must retain the data-wf-site attribute for forms to work
       if (!siteId) { afterSubmit(data); return; }
 
-      if (payload.name === 'Token Form' || payload.name === 'subscribe-hero-form') {
-        const errorDivName = payload.name === 'Token Form' ? '#token-subscription-response' : '#hero-subscription-response';
+      if (payload.name === 'Token Form' || payload.name === 'subscribe-hero-form' || payload.name === 'Whitelist Form') {
+        const errorDivName =
+            payload.name === 'Token Form' ? '#token-subscription-response' :
+            (payload.name === 'Whitelist Form' ? '#whitelist-subscription-response' : '#hero-subscription-response');
         const form = $('#mc-embedded-subscribe-form')
         $('#mce-EMAIL').val(payload.fields.email)
         $(errorDivName).css('visibility', 'hidden');
@@ -1069,21 +1071,28 @@
             },
             success : function(response) {
               reset(data);
-              console.log(response);
               if (response.result != 'success') {
                 var errorMessage = 'Something went wrong while processing your request, please try again later.';
                 if (response.msg && response.msg.indexOf('The domain portion') >= 0) {
                   errorMessage = 'Please provide a valid email address.';
                 } else if (response.msg && response.msg.indexOf('is already subscribed') >= 0) {
-                  errorMessage = 'Email is already subscribed, Thank you!';
+                  if (payload.name === 'Whitelist Form') {
+                    window.location.href = "/thank-you.html";
+                  } else {
+                    errorMessage = 'Email is already subscribed, Thank you!';
+                  }
                 } else if (response.msg && response.msg.indexOf('has too many') >= 0) {
                   errorMessage = 'Recipient has too many recent subscription requests, please try again later.';
                 }
                 $(errorDivName).text(errorMessage);
                 $(errorDivName).css('visibility', 'visible');
               } else {
-                $(errorDivName).text('Thank you, your submission has been received!')
-                $(errorDivName).css('visibility', 'visible');
+                if (payload.name === 'Whitelist Form') {
+                  window.location.href = "/thank-you.html";
+                } else {
+                  $(errorDivName).text('Thank you, your submission has been received!')
+                  $(errorDivName).css('visibility', 'visible');
+                }
               }
             }
         });

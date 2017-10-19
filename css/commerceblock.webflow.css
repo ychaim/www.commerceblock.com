@@ -571,6 +571,15 @@ p {
   font-size: 27px;
 }
 
+.thank-you-logo-mini {
+    padding-top: 20px;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-family: Fontawesome, sans-serif;
+    font-size: 42px;
+  }
+
 
 /*
   @@media {
