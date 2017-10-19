@@ -11,12 +11,21 @@
 
   <!-- Google Tag Manager -->
   <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
     })
-    (window,document,'script','dataLayer','GTM-TQPCP6V');
+    (window, document, 'script', 'dataLayer', 'GTM-TQPCP6V');
   </script>
   <!-- End Google Tag Manager -->
 
@@ -67,20 +76,17 @@
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div class="hero" id="hero" style="padding-bottom: 0; justify-content: center;">
-    <div class="token-hero" style="height: auto;">
-      <div class="div-block" style="padding-top: 60px;"><img class="token-sale-icon" src="images/CommerceBlock-White-BG.png">
-        <h1 class="token-header">Thank you for signing up!</h1>
-        <h2 class="token-subheader">Join us on Telegram</h2>
-        <div class="social-hero">
-          <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 10px;">
-            <a class="link-block-mini social-hero-button" href="https://t.me/joinchat/Ge36IURXhKAS_6HTznUXUg" target="_blank">
-              <div class="thank-you-logo-mini">&#xf2c6;</div>
-            </a>
-          </div>
+  <div class="hero" id="hero" style="padding-bottom: 0; min-height: calc(100vh - 40px); justify-content: center;">
+    <div class="div-block"><img class="token-sale-icon" src="images/CommerceBlock-White-BG.png">
+      <h1 class="token-header">Thank you for signing up!</h1>
+      <div class="social-hero">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 10px;">
+          <a id="telegram-button" href="https://t.me/joinchat/Ge36IURXhKAS_6HTznUXUg" target="_blank">
+            <div style="margin-right: 10px; font-family: Fontawesome, sans-serif;" >&#xf2c6;</div>
+            <span>Join us on Telegram</span>
+          </a>
         </div>
       </div>
-
     </div>
   </div>
   <div class="footer">
