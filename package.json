@@ -1,0 +1,25 @@
+{
+  "name": "www.commerceblock.com",
+  "version": "0.1.0",
+  "license" : "BSD-4-Clause",
+  "scripts": {
+    "deploy": "serverless deploy && serverless syncToS3",
+    "sync": "serverless syncToS3"
+  },
+  "lint-staged": {
+    "lint:eslint": "*.js",
+    "stylelint": "*.css"
+  },
+  "pre-commit": "lint:staged",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "serverless-single-page-app-plugin": "git://github.com/commerceblock/serverless-single-page-app-plugin.git#5140a247b4eb7a292720243190d341e372eb9c7c"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^.+\\.(jpg|png|gif|eot|svg|ttf|woff|woff2|mp4|webm)$": "<rootDir>/deployment/jest/fileMock.js",
+      "^.+\\.css$": "<rootDir>/deployment/jest/cssMock.js"
+    }
+  }
+}
