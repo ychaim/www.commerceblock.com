@@ -1,5 +1,13 @@
-target/*
-.idea/*
-native-libs/*
 .DS_Store
-.css/.DS_Store
+node_modules
+npm-debug.log
+
+# serverless zip
+.serverless
+
+coverage/
+
+build/
+kms-secrets*.yml
+env.*.yml
+.vscode
