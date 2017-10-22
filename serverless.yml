@@ -7,7 +7,7 @@ plugins:
 
 provider:
   name: aws
-  stage: prod012
+  stage: prod016
   region: us-east-1
   runtime: nodejs6.10
   environment:
@@ -17,7 +17,7 @@ custom:
   stage: ${opt:stage, self:provider.stage}
   s3Bucket: cb-${self:provider.environment.CB_ENV_NAME}
   s3RedirectBucket:  cb-${self:provider.environment.CB_ENV_NAME}-redirect
-  domainName: www2.commerceblock.com
+  domainName: www.commerceblock.com
   localWebsiteDestination: site/
   remoteWebsiteDestination: s3://${self:custom.s3Bucket}/
 
