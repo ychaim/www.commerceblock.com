@@ -20,7 +20,6 @@ custom:
   domainName: www2.commerceblock.com
   localWebsiteDestination: site/
   remoteWebsiteDestination: s3://${self:custom.s3Bucket}/
-  externalConfig: ${file(env.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml)}
 
 resources:
   Resources:
