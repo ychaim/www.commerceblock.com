@@ -7,15 +7,17 @@ plugins:
 
 provider:
   name: aws
-  stage: stag011
+  stage: prod012
   region: us-east-1
   runtime: nodejs6.10
   environment:
-    CB_ENV_NAME: ${self:custom.stage}-${self:service}
+    CB_ENV_NAME: ${self:service}-${self:custom.stage}
 
 custom:
   stage: ${opt:stage, self:provider.stage}
   s3Bucket: cb-${self:provider.environment.CB_ENV_NAME}
+  s3RedirectBucket:  cb-${self:provider.environment.CB_ENV_NAME}-redirect
+  domainName: www2.commerceblock.com
   localWebsiteDestination: site/
   remoteWebsiteDestination: s3://${self:custom.s3Bucket}/
   externalConfig: ${file(env.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml)}
@@ -29,7 +31,7 @@ resources:
         AccessControl: PublicRead
         WebsiteConfiguration:
           IndexDocument: index.html
-          ErrorDocument: index.html
+          ErrorDocument: default.html
     WebsiteS3BucketPolicy:
       Type: AWS::S3::BucketPolicy
       Properties:
@@ -48,17 +50,17 @@ resources:
                 - - 'arn:aws:s3:::'
                   - Ref: WebsiteS3Bucket
                   - "/*"
-    WebAppCloudFrontDistribution:
+    WebsiteCloudFrontDistribution:
       Type: AWS::CloudFront::Distribution
       Properties:
         DistributionConfig:
           Origins:
-            - DomainName: ${self:custom.s3Bucket}.s3.amazonaws.com
-              Id: WebApp
+            - DomainName: ${self:custom.s3Bucket}.s3-website-us-east-1.amazonaws.com
+              Id: Website
               CustomOriginConfig:
                 HTTPPort: 80
                 HTTPSPort: 443
-                OriginProtocolPolicy: https-only
+                OriginProtocolPolicy: http-only
           Enabled: 'true'
           DefaultRootObject: index.html
           CustomErrorResponses:
@@ -67,14 +69,63 @@ resources:
               ResponsePagePath: /index.html
           DefaultCacheBehavior:
             AllowedMethods:
-              - DELETE
               - GET
               - HEAD
               - OPTIONS
-              - PATCH
-              - POST
-              - PUT
-            TargetOriginId: WebApp
+            TargetOriginId: Website
+            ForwardedValues:
+              QueryString: 'false'
+              Cookies:
+                Forward: none
+            ViewerProtocolPolicy: redirect-to-https
+          ViewerCertificate:
+            CloudFrontDefaultCertificate: 'true'
+
+    RedirectWebsiteS3Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:custom.s3RedirectBucket}
+        AccessControl: PublicRead
+        WebsiteConfiguration:
+          RedirectAllRequestsTo:
+            HostName: ${self:custom.domainName}
+            Protocol: https
+    RedirectWebsiteS3BucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket:
+          Ref: RedirectWebsiteS3Bucket
+        PolicyDocument:
+          Statement:
+            - Sid: PublicReadGetObject
+              Effect: Allow
+              Principal: "*"
+              Action:
+              - s3:GetObject
+              Resource:
+              - Fn::Join:
+                - ''
+                - - 'arn:aws:s3:::'
+                  - Ref: RedirectWebsiteS3Bucket
+                  - "/*"
+    RedirectWebsiteCloudFrontDistribution:
+      Type: AWS::CloudFront::Distribution
+      Properties:
+        DistributionConfig:
+          Origins:
+            - DomainName: ${self:custom.s3RedirectBucket}.s3-website-us-east-1.amazonaws.com
+              Id: Website
+              CustomOriginConfig:
+                HTTPPort: 80
+                HTTPSPort: 443
+                OriginProtocolPolicy: http-only
+          Enabled: 'true'
+          DefaultCacheBehavior:
+            AllowedMethods:
+              - GET
+              - HEAD
+              - OPTIONS
+            TargetOriginId: Website
             ForwardedValues:
               QueryString: 'false'
               Cookies:
@@ -84,6 +135,9 @@ resources:
             CloudFrontDefaultCertificate: 'true'
 
   Outputs:
-    WebAppCloudFrontDistributionOutput:
+    WebsiteCloudFrontDistributionOutput:
       Value:
-        'Fn::GetAtt': [ WebAppCloudFrontDistribution, DomainName ]
+        'Fn::GetAtt': [ WebsiteCloudFrontDistribution, DomainName ]
+    RedirectWebsiteCloudFrontDistributionOutput:
+      Value:
+        'Fn::GetAtt': [ RedirectWebsiteCloudFrontDistribution, DomainName ]
