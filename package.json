@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "license" : "BSD-4-Clause",
   "scripts": {
-    "deploy": "serverless deploy && serverless syncToS3",
-    "sync": "serverless syncToS3"
+    "deploy:prod": "serverless deploy --stage production && npm run sync:prod",
+    "sync:prod": "serverless syncToS3 --stage production",
+    "deploy:sand": "serverless deploy --stage sandbox && npm run sync:sand",
+    "sync:sand": "serverless syncToS3 --stage sandbox"
   },
   "lint-staged": {
     "lint:eslint": "*.js",

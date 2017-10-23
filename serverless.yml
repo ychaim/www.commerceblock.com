@@ -5,21 +5,30 @@ frameworkVersion: ">=1.1.0 <2.0.0"
 plugins:
   - serverless-single-page-app-plugin
 
+custom:
+  defaultStage: sandbox
+  accounts:
+    production:
+      stage: prod017
+      domainName: www.commerceblock.com
+    sandbox:
+      stage: sand017
+      domainName: www.commerceblock.ninja
+  selectedStage: ${opt:stage, self:custom.defaultStage}
+  stage: ${self:custom.accounts.${self:custom.selectedStage}.stage}
+  s3Bucket: cb-${self:provider.environment.CB_ENV_NAME}
+  s3RedirectBucket:  cb-${self:provider.environment.CB_ENV_NAME}-redirect
+  localWebsiteDestination: site/
+  remoteWebsiteDestination: s3://${self:custom.s3Bucket}/
+  domainName: ${self:custom.accounts.${self:custom.selectedStage}.domainName}
+
 provider:
   name: aws
-  stage: prod017
+  stage:  ${self:custom.stage}
   region: us-east-1
   runtime: nodejs6.10
   environment:
     CB_ENV_NAME: ${self:service}-${self:custom.stage}
-
-custom:
-  stage: ${opt:stage, self:provider.stage}
-  s3Bucket: cb-${self:provider.environment.CB_ENV_NAME}
-  s3RedirectBucket:  cb-${self:provider.environment.CB_ENV_NAME}-redirect
-  domainName: www.commerceblock.com
-  localWebsiteDestination: site/
-  remoteWebsiteDestination: s3://${self:custom.s3Bucket}/
 
 resources:
   Resources:
