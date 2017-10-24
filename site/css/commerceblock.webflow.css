@@ -342,6 +342,7 @@ p {
   /*justify-content: center;*/
   display: flex;
   display: -ms-flexbox;
+  margin-right: 30px;
 }
 
 .video-link {
