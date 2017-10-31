@@ -2035,3 +2035,100 @@ p {
   align-items: center;
   padding: 20px;
 }
+
+.countdown-widget {
+  background: white;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 384px;
+  align-self: center;
+  margin: 30px 0;
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.time-box {
+  font-size: 56px;
+  line-height: 56px;
+  position: relative;
+  font-weight: 200;
+}
+
+.time-box h5 {
+  color: gray;
+  font-size: 10px;
+}
+
+.time-clock {
+  display: flex;
+  flex-direction: column;
+}
+
+.clock-divider {
+  color: green;
+  position: relative;
+  top: 13px;
+  margin: 0 3px;
+  font-size: 55px;
+  font-weight: 100;
+}
+
+.participate-link {
+  background: #258c42;
+  width: 78%;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+  height: 40px;
+  line-height: 30px;
+  font-size: 19px;
+}
+
+.conversion-rates {
+  width: 80%;
+  text-align: left;
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+.conversion-rates h5 {
+  text-align: center;
+}
+
+.distribution-details {
+  color: gray;
+}
+
+.cbt-rate {
+  color: gray;
+}
+
+.cbt-rate h5 {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.cbt-rate h2 {
+  margin: 0 !important;
+  font-size: 27px;
+  line-height: 30px;
+  font-weight: 200;
+}
+
+.cbt-green {
+  color: green;
+}
