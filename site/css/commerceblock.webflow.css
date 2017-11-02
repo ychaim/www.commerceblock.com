@@ -1008,7 +1008,7 @@ p {
 
 .subscribe-submit {
   height: 55px;
-  width: 140px;
+  width: auto !important;
   font-family: Lato, sans-serif;
   font-size: 18px;
 }
@@ -2004,25 +2004,20 @@ p {
   .roadmap-container:nth-of-type(even) {
     left: 0%;
   }
-
   .time-box {
     font-size: 25px !important;
     line-height: 20px !important;
   }
-
   .clock-divider {
     top: -2px !important;
     font-size: 30px !important;
   }
-
   .section {
     padding: 0 7px 40px 7px !important;
   }
-
   .countdown-widget {
     padding: 0 !important;
   }
-
   .cbt-rate h2 {
     font-size: 22px !important;
   }
@@ -2041,6 +2036,14 @@ p {
 
 
 /* THANK YOU*/
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1060px;
+  margin: auto;
+}
 
 #telegram-button {
   height: 30px;
