@@ -106,7 +106,7 @@
       </div>
     </div>
     <div class="hero-title">
-      <div class="container w-container" style="display: flex; flex-direction: column">
+      <div class="container hero-container" style="display: flex; flex-direction: column; width: 100%;">
         <h1 class="hero-header" data-ix="scroll-up">CommerceBlock is a public blockchain infrastructure company</h1>
 
         <div class="countdown-widget">
@@ -158,23 +158,24 @@
             <h5><strong>CBT PRICES</strong></h5>
 
             <div class="cbt-rate cbt-usd">
-              <h2><span class="cbt-green">1 CBT</span> = <span style="usd-rate">0.0625</span></h2>
+              <h2><span class="cbt-green">1 CBT</span> = <span style="usd-rate">0.0625 USD</span></h2>
+              <h2><span style="usd-rate">1 USD</span> = <span class="cbt-green">16 CBT</span></h2>
             </div>
 
-            <div class="cbt-rate cbt-btc">
+            <!-- <div class="cbt-rate cbt-btc">
               <h2><span class="cbt-green">1 CBT</span> = <span style="btc-rate">0.0625</span></h2>
             </div>
 
             <div class="cbt-rate cbt-eth">
               <h2><span class="cbt-green">1 CBT</span> = <span style="eth-rate">0.0625</span></h2>
-            </div>
+            </div> -->
           </div>
 
-          <h5 class="distribution-details">Contributors will receive token on Nov 24th</h5>
+          <h5 class="distribution-details">The BTC and ETH conversion rates will be published 24h prior to the token sale and will be updated daily.</h5>
         </div>
 
         <h2 class="heading-2" data-ix="scroll-up">We are building the first technology platform to bring a combination of trust minimized trade, decentralized contract execution, on-chain derivatives and asset backed token issuance to public blockchains.</h2>
-        <div class="secondary-header" data-ix="scroll-up">Token sales starts on Nov 8th, apply for whitelist now!</div>
+        <div class="secondary-header" data-ix="scroll-up">Token sales starts on Nov 28th, apply for whitelist now!</div>
         <div class="hero-buttons">
           <div class="hero-button-wrapper">
             <a class="cta token-button w-button white" href="commerceblock-whitepaper.pdf" target="_blank">Read our whitepaper</a>
@@ -768,11 +769,15 @@
     }
 
     updateClock();
+    if(timeinterval) {
+      clearInterval(timeinterval)
+    }
+    console.log(endtime);
     var timeinterval = setInterval(updateClock, 1000);
   }
 
   // var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-  var deadline = new Date('2017-12-25');
+  var deadline = new Date(2017, 10, 28, 18, 00);
   initializeClock(deadline);
 </script>
 

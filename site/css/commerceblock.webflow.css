@@ -992,6 +992,7 @@ p {
   margin: 40px 0 0 0;
   display: flex;
   display: -ms-flexbox;
+  flex-wrap: wrap;
 }
 
 .subscribe-input {
@@ -1000,11 +1001,9 @@ p {
   height: 55px;
   font-size: 15px;
   border: none;
-  /*border-radius: 20px;*/
+  margin-right: 5px;
   border-radius: 5px;
   max-width: 490px;
-  /*-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px #f8f8f8;*/
-  /*box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px #f8f8f8;*/
 }
 
 .subscribe-submit {
@@ -1425,7 +1424,7 @@ p {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    height: 700px;
+    height: 750px;
   }
   .menu-white {
     color: #fff;
@@ -1713,7 +1712,7 @@ p {
     justify-content: center;
   }
   .subscribe-submit {
-    width: 100px;
+    width: auto;
     font-size: 16px;
   }
 }
@@ -2005,6 +2004,28 @@ p {
   .roadmap-container:nth-of-type(even) {
     left: 0%;
   }
+
+  .time-box {
+    font-size: 25px !important;
+    line-height: 20px !important;
+  }
+
+  .clock-divider {
+    top: -2px !important;
+    font-size: 30px !important;
+  }
+
+  .section {
+    padding: 0 7px 40px 7px !important;
+  }
+
+  .countdown-widget {
+    padding: 0 !important;
+  }
+
+  .cbt-rate h2 {
+    font-size: 22px !important;
+  }
 }
 
 
@@ -2040,8 +2061,8 @@ p {
   background: white;
   display: inline-flex;
   flex-direction: column;
-  padding: 32px;
   align-items: center;
+  padding: 30px;
   justify-content: center;
   border-radius: 5px;
   text-align: center;
@@ -2126,7 +2147,7 @@ p {
   margin: 0 !important;
   font-size: 27px;
   line-height: 30px;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .cbt-green {
