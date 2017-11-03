@@ -2021,6 +2021,9 @@ p {
   .cbt-rate h2 {
     font-size: 22px !important;
   }
+  .hero-content {
+    min-width: 0 !important;
+  }
 }
 
 
@@ -2043,6 +2046,20 @@ p {
   width: 100%;
   max-width: 1060px;
   margin: auto;
+}
+
+.hero-content-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+
+.hero-content {
+  flex: 1;
+  padding-right: 5px;
+  min-width: 332px;
 }
 
 #telegram-button {
