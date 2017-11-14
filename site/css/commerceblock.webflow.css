@@ -419,7 +419,7 @@ p {
 
 .press-item {
   flex-basis: 51%;
-  max-width: 275px;
+  max-width: 225px;
   margin-top: 10px;
   padding: 15px;
   display: flex;
