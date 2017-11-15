@@ -155,6 +155,26 @@
 
             <a href="https://whitelist.commerceblock.com/" class="participate-link">Whitelist now!</a>
 
+            <div id="token-sale-progress-bar-wrapper">
+              <h5><strong>TOKEN SOLD</strong></h5>
+              <div id="token-sale-progress">
+                <div id="token-sale-progress-internal">
+
+                </div>
+              </div>
+              <div id="token-sale-legend">
+                <div id="sold">
+                  123
+                </div>
+                <div id="total">
+                  1230
+                </div>
+              </div>
+              <div id="total-raised-dollar">
+                Total raised: $<span id="usd-raised">30.000.000</span>
+              </div>
+            </div>
+
             <div class="conversion-rates">
               <h5><strong>CBT PRICES</strong></h5>
 
@@ -802,16 +822,21 @@
   initializeClock(deadline);
 
   (function() {
-  var flickerAPI = "http://www.commerceblock.com/v1.0/rates";
-  $.getJSON( flickerAPI, {
-    tags: "mount rainier",
-    tagmode: "any",
+  var tokenAPI = "http://localhost:9000/v1.0/rates";
+  $.getJSON( tokenAPI, {
     format: "json"
   })
     .done(function( data ) {
-      $.each( data.items, function( i, item ) {
-        console.log(item);
-      });
+      var tokenSold = data.total_tokens_sold
+      var tokenTotal = 599999999
+      var progressPercent = tokenSold * 100 / tokenTotal
+      var progressDOM = document.getElementById('token-sale-progress-internal')
+      var usdRaisedDOM = document.getElementById('usd-raised')
+      var usdRaised = tokenSold * 0.0625
+
+      usdRaisedDOM.innerText = usdRaised.toLocaleString()
+      progressDOM.style.width = '' + progressPercent + '%'
+
     });
 })();
 </script>

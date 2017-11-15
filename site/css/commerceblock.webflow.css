@@ -2177,3 +2177,36 @@ p {
 .cbt-green {
   color: green;
 }
+
+#token-sale-progress-bar-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  width: 100%;
+  flex-direction: column;
+}
+
+#token-sale-legend {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#token-sale-progress {
+  width: 100%;
+  flex: 1;
+  border-radius: 7px;
+  height: 14px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+}
+
+#token-sale-progress-internal {
+  width: 0%;
+  border-radius: 5px;
+  height: 8px;
+  background: #258c42
+}
