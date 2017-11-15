@@ -293,6 +293,9 @@
             <a href="https://www.coinspeaker.com/2017/10/25/commerceblock-enabling-trading-everything-blockchain/" target="_blank"><img src="images/coinspeaker.png" alt="managing your finance article"></a>
           </div>
           <div class="press-item">
+            <a href="https://themerkle.com/commerceblock-turns-real-estate-buying-and-selling-into-a-global-tokenized-market/" target="_blank"><img src="images/themerkle.png" alt="the merkle article"></a>
+          </div>
+          <div class="press-item">
             <a href="http://www.express.co.uk/finance/city/875199/bitcoin-news-bubble-crash-btc-price-cryptocurrency-market-future" target="_blank"><img src="images/express.png" alt="managing your finance article"></a>
           </div>
           <div class="press-item">
@@ -797,6 +800,20 @@
   // var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
   var deadline = new Date(2017, 10, 28, 18, 00);
   initializeClock(deadline);
+
+  (function() {
+  var flickerAPI = "http://www.commerceblock.com/v1.0/rates";
+  $.getJSON( flickerAPI, {
+    tags: "mount rainier",
+    tagmode: "any",
+    format: "json"
+  })
+    .done(function( data ) {
+      $.each( data.items, function( i, item ) {
+        console.log(item);
+      });
+    });
+})();
 </script>
 
 </html>
