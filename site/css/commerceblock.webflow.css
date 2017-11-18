@@ -2156,6 +2156,7 @@ p {
 
 .distribution-details {
   color: gray;
+  max-width: 90%;
 }
 
 .cbt-rate {
