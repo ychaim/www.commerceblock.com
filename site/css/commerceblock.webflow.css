@@ -1632,6 +1632,9 @@ p {
   .hero-buttons {
     justify-content: center;
   }
+  .hero-button-wrapper {
+     margin-right: 0 !important;
+  }
   .heading-2 {
     font-size: 17px;
     line-height: 31px;
