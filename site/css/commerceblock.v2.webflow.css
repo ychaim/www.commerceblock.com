@@ -2214,3 +2214,8 @@ p {
   height: 8px;
   background: #258c42
 }
+
+/* adsymptotic.com pixel issue */
+img[src*="adsymptotic.com"] {
+  display: none;
+}
