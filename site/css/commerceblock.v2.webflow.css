@@ -1632,6 +1632,9 @@ p {
   .hero-buttons {
     justify-content: center;
   }
+  .hero-button-wrapper {
+     margin-right: 0 !important;
+  }
   .heading-2 {
     font-size: 17px;
     line-height: 31px;
@@ -2016,7 +2019,7 @@ p {
     padding: 0 7px 40px 7px !important;
   }
   .countdown-widget {
-    padding: 0 !important;
+    padding: 0 7px !important;
   }
   .cbt-rate h2 {
     font-size: 22px !important;
@@ -2156,6 +2159,7 @@ p {
 
 .distribution-details {
   color: gray;
+  max-width: 90%;
 }
 
 .cbt-rate {
@@ -2209,4 +2213,9 @@ p {
   border-radius: 5px;
   height: 8px;
   background: #258c42
+}
+
+/* adsymptotic.com pixel issue */
+img[src*="adsymptotic.com"] {
+  display: none;
 }

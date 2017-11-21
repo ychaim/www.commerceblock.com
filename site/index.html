@@ -9,7 +9,7 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/commerceblock.webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/commerceblock.v2.webflow.css" rel="stylesheet" type="text/css">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="images/favicon-32.png" rel="shortcut icon" type="image/x-icon">
   <link href="images/favicon-256.png" rel="apple-touch-icon">
@@ -206,8 +206,13 @@
             <div class="hero-buttons">
               <div class="hero-button-wrapper">
                 <a class="cta token-button w-button white" href="commerceblock-whitepaper.pdf" target="_blank">Read our whitepaper</a>
-              </div>
 
+              </div>
+              <div class="hero-button-wrapper">
+
+                <a class="cta token-button w-button white" id="twopager" href="commerceblock-two-pager.pdf" target="_blank">Read our lightpaper</a>
+
+              </div>
               <!-- <div class="hero-button-wrapper">
                 <a class="cta token-button w-button white" href="https://whitelist.commerceblock.com" target="_blank">Apply for whitelist</a>
               </div> -->
@@ -843,7 +848,6 @@
       var usdRaisedDOM = document.getElementById('usd-raised')
       var ethRateDOM = document.getElementById('eth-cbt-rate')
       var btcRateDOM = document.getElementById('btc-cbt-rate')
-      // var btcRate = data.
       var bonusDOM = document.getElementById('bonus')
       var usdRaised = tokenSold * 0.0625
 

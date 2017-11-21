@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "license" : "BSD-4-Clause",
   "scripts": {
-    "deploy:prod": "serverless deploy --stage production && npm run sync:prod",
+    "deploy:prod": "serverless deploy --stage production && npm run sync:prod && npm run purge:prod",
     "sync:prod": "serverless syncToS3 --stage production",
-    "deploy:sand": "serverless deploy --stage sandbox && npm run sync:sand",
-    "sync:sand": "serverless syncToS3 --stage sandbox"
+    "deploy:sand": "serverless deploy --stage sandbox && npm run sync:sand && npm run purge:sand",
+    "sync:sand": "serverless syncToS3 --stage sandbox",
+    "purge:sand": "aws cloudfront create-invalidation --distribution-id E27VDP7TZMY1D2 --paths '/*'",
+    "purge:prod": "aws cloudfront create-invalidation --distribution-id E167T12N5SAWMO --paths '/*'"
   },
   "lint-staged": {
     "lint:eslint": "*.js",
