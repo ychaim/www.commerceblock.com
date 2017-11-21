@@ -2142,7 +2142,6 @@ p {
 }
 
 .conversion-rates {
-  width: 80%;
   text-align: left;
 }
 
@@ -2173,7 +2172,7 @@ p {
 
 .cbt-rate h2 {
   margin: 0 !important;
-  font-size: 27px;
+  font-size: 20px;
   line-height: 30px;
   font-weight: 300;
 }

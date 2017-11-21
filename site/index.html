@@ -153,10 +153,10 @@
 
             </div>
 
-            <a href="https://whitelist.commerceblock.com/" class="participate-link">Whitelist now!</a>
+            <a href="https://whitelist.commerceblock.com/" class="participate-link">Participate now!</a>
 
             <div id="token-sale-progress-bar-wrapper">
-              <h5><strong>TOKEN SOLD</strong></h5>
+              <h5><strong> <span id="token-sold-percentage">0</span>% TOKEN SOLD</strong></h5>
               <div id="token-sale-progress">
                 <div id="token-sale-progress-internal">
 
@@ -167,7 +167,7 @@
                   0
                 </div>
                 <div id="total">
-                  1.000.000.000
+                  400.000.000
                 </div>
               </div>
               <div id="total-raised-dollar">
@@ -185,8 +185,8 @@
               <div class="cbt-rate cbt-usd">
                 <h2><span class="cbt-green">1 CBT</span> = <span style="usd-rate">0.0625 USD</span></h2>
                 <h2><span style="usd-rate">1 USD</span> = <span class="cbt-green">16 CBT</span></h2>
-                <h2><span style="usd-rate">1 USD</span> = <span class="cbt-green"><span id="eth-cbt-rate">0</span> CBT</span></h2>
-                <h2><span style="usd-rate">1 USD</span> = <span class="cbt-green"><span id="btc-cbt-rate">0</span> CBT</span></h2>
+                <h2><span style="usd-rate">1 BTC</span> = <span class="cbt-green"><span id="btc-cbt-rate">0</span> CBT</span></h2>
+                <h2><span style="usd-rate">1 ETH</span> = <span class="cbt-green"><span id="eth-cbt-rate">0</span> CBT</span></h2>
               </div>
 
               <!-- <div class="cbt-rate cbt-btc">
@@ -198,7 +198,7 @@
               </div> -->
             </div>
 
-            <h5 class="distribution-details">The BTC and ETH conversion rates will be published 24h prior to the token sale and will be updated daily.</h5>
+            <h5 class="distribution-details">Last rates update:<span id="last-price-update">[date]</span>.</h5>
           </div>
 
           <div class="hero-content">
@@ -840,14 +840,20 @@
     .done(function( data ) {
       console.log(data);
       var tokenSold = data.total_tokens_sold
-      var tokenTotal = 599999999
+      var tokenTotal = 400000000
       var progressPercent = tokenSold * 100 / tokenTotal
+      var percentageDOM = document.getElementById('token-sold-percentage')
       var progressDOM = document.getElementById('token-sale-progress-internal')
 
       var tokenSoldDOM = document.getElementById('token-sold')
       var usdRaisedDOM = document.getElementById('usd-raised')
+
       var ethRateDOM = document.getElementById('eth-cbt-rate')
+      var ethRate = (1 / data.tickers.ETH).toFixed(2)
+
       var btcRateDOM = document.getElementById('btc-cbt-rate')
+      var btcRate = (1 / data.tickers.BTC).toFixed(2)
+
       var bonusDOM = document.getElementById('bonus')
       var usdRaised = tokenSold * 0.0625
 
@@ -855,6 +861,9 @@
         bonusDOM.style.display = 'block'
       }
 
+      percentageDOM.innerHTML = (progressPercent).toFixed(1)
+      ethRateDOM.innerText = ethRate
+      btcRateDOM.innerText = btcRate
       tokenSoldDOM.innerText = Math.floor(tokenSold).toLocaleString()
       usdRaisedDOM.innerText = Math.floor(usdRaised).toLocaleString()
       progressDOM.style.width = '' + progressPercent + '%'
