@@ -181,11 +181,12 @@
 
 
             <div class="conversion-rates">
-              <h5><strong>CBT PRICES</strong></h5>
 
               <div class="cbt-rate cbt-usd">
                 <h2><span class="cbt-green">1 CBT</span> = <span style="usd-rate">0.0625 USD</span></h2>
                 <h2><span style="usd-rate">1 USD</span> = <span class="cbt-green">16 CBT</span></h2>
+                <h2><span style="usd-rate">1 USD</span> = <span class="cbt-green"><span id="eth-cbt-rate">0</span> CBT</span></h2>
+                <h2><span style="usd-rate">1 USD</span> = <span class="cbt-green"><span id="btc-cbt-rate">0</span> CBT</span></h2>
               </div>
 
               <!-- <div class="cbt-rate cbt-btc">
@@ -827,7 +828,7 @@
   initializeClock(deadline);
 
   (function() {
-  var tokenAPI = "https://k2be3ow2c4.execute-api.eu-west-1.amazonaws.com/sand022/v1.0/rates";
+  var tokenAPI = "https://6id7qpffck.execute-api.eu-west-1.amazonaws.com/sand030/v1.0/rates";
   $.getJSON( tokenAPI, {
     format: "json"
   })
@@ -840,6 +841,9 @@
 
       var tokenSoldDOM = document.getElementById('token-sold')
       var usdRaisedDOM = document.getElementById('usd-raised')
+      var ethRateDOM = document.getElementById('eth-cbt-rate')
+      var btcRateDOM = document.getElementById('btc-cbt-rate')
+      // var btcRate = data.
       var bonusDOM = document.getElementById('bonus')
       var usdRaised = tokenSold * 0.0625
 
