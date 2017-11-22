@@ -111,19 +111,47 @@
 
         <div class="hero-content-wrapper" >
           <div class="countdown-widget">
-            <h5><strong>TOKEN SALE STARTS IN:</strong></h5>
+            <h5><strong>TOKEN SALE ENDS IN:</strong></h5>
             <div class="countdown">
               <div class="days-box time-box">
                 <div id="days" class="days">
-                  09
+                  <span style="opacity: 0">00</span>
+                  <div class="sk-circle">
+                    <div class="sk-circle1 sk-child"></div>
+                    <div class="sk-circle2 sk-child"></div>
+                    <div class="sk-circle3 sk-child"></div>
+                    <div class="sk-circle4 sk-child"></div>
+                    <div class="sk-circle5 sk-child"></div>
+                    <div class="sk-circle6 sk-child"></div>
+                    <div class="sk-circle7 sk-child"></div>
+                    <div class="sk-circle8 sk-child"></div>
+                    <div class="sk-circle9 sk-child"></div>
+                    <div class="sk-circle10 sk-child"></div>
+                    <div class="sk-circle11 sk-child"></div>
+                    <div class="sk-circle12 sk-child"></div>
+                  </div>
                 </div>
                 <h5>DAYS</h5>
               </div>
 
               <div class="time-clock" style="display: flex; flex-direction: row; margin-left: 30px">
                 <div class="hours-box time-box">
-                  <div id="hours" class="hours">
-                    09
+                  <div id="hours" class="hours position-relative">
+                    <span style="opacity: 0">00</span>
+                    <div class="sk-circle">
+                      <div class="sk-circle1 sk-child"></div>
+                      <div class="sk-circle2 sk-child"></div>
+                      <div class="sk-circle3 sk-child"></div>
+                      <div class="sk-circle4 sk-child"></div>
+                      <div class="sk-circle5 sk-child"></div>
+                      <div class="sk-circle6 sk-child"></div>
+                      <div class="sk-circle7 sk-child"></div>
+                      <div class="sk-circle8 sk-child"></div>
+                      <div class="sk-circle9 sk-child"></div>
+                      <div class="sk-circle10 sk-child"></div>
+                      <div class="sk-circle11 sk-child"></div>
+                      <div class="sk-circle12 sk-child"></div>
+                    </div>
                   </div>
                   <h5>HOURS</h5>
                 </div>
@@ -134,7 +162,21 @@
 
                 <div class="minutes-box time-box">
                   <div id="minutes" class="minutes">
-                    09
+                    <span style="opacity: 0">00</span>
+                    <div class="sk-circle">
+                      <div class="sk-circle1 sk-child"></div>
+                      <div class="sk-circle2 sk-child"></div>
+                      <div class="sk-circle3 sk-child"></div>
+                      <div class="sk-circle4 sk-child"></div>
+                      <div class="sk-circle5 sk-child"></div>
+                      <div class="sk-circle6 sk-child"></div>
+                      <div class="sk-circle7 sk-child"></div>
+                      <div class="sk-circle8 sk-child"></div>
+                      <div class="sk-circle9 sk-child"></div>
+                      <div class="sk-circle10 sk-child"></div>
+                      <div class="sk-circle11 sk-child"></div>
+                      <div class="sk-circle12 sk-child"></div>
+                    </div>
                   </div>
                   <h5>MINUTES</h5>
                 </div>
@@ -145,7 +187,21 @@
 
                 <div class="seconds-box time-box">
                   <div id="seconds" class="seconds">
-                    09
+                    <span style="opacity: 0">00</span>
+                    <div class="sk-circle">
+                      <div class="sk-circle1 sk-child"></div>
+                      <div class="sk-circle2 sk-child"></div>
+                      <div class="sk-circle3 sk-child"></div>
+                      <div class="sk-circle4 sk-child"></div>
+                      <div class="sk-circle5 sk-child"></div>
+                      <div class="sk-circle6 sk-child"></div>
+                      <div class="sk-circle7 sk-child"></div>
+                      <div class="sk-circle8 sk-child"></div>
+                      <div class="sk-circle9 sk-child"></div>
+                      <div class="sk-circle10 sk-child"></div>
+                      <div class="sk-circle11 sk-child"></div>
+                      <div class="sk-circle12 sk-child"></div>
+                    </div>
                   </div>
                   <h5>SECONDS</h5>
                 </div>
@@ -183,10 +239,9 @@
             <div class="conversion-rates">
 
               <div class="cbt-rate cbt-usd">
-                <h2><span class="cbt-green">1 CBT</span> = <span style="usd-rate">0.0625 USD</span></h2>
-                <h2><span style="usd-rate">1 USD</span> = <span class="cbt-green">16 CBT</span></h2>
-                <h2><span style="usd-rate">1 BTC</span> = <span class="cbt-green"><span id="btc-cbt-rate">0</span> CBT</span></h2>
-                <h2><span style="usd-rate">1 ETH</span> = <span class="cbt-green"><span id="eth-cbt-rate">0</span> CBT</span></h2>
+                <h2><span class="cbt-green" style="usd-rate">1 USD</span> = 16 CBT</h2>
+                <h2><span class="cbt-green" style="usd-rate">1 BTC</span> = <span id="btc-cbt-rate">0</span> CBT</h2>
+                <h2><span class="cbt-green" style="usd-rate">1 ETH</span> = <span id="eth-cbt-rate">0</span> CBT</h2>
               </div>
 
               <!-- <div class="cbt-rate cbt-btc">
@@ -198,7 +253,11 @@
               </div> -->
             </div>
 
-            <h5 class="distribution-details">Last rates update:<span id="last-price-update">[date]</span>.</h5>
+            <h5 class="distribution-details">Last rates update: <span id="last-price-update">1</span>h ago.</h5>
+            <div class="cbt-rate smaller">
+              <h2><span class="cbt-green" style="usd-rate">1 BTC</span> = <span id="btc-cbt-rate-update">0</span> USD</h2>
+              <h2><span class="cbt-green" style="usd-rate">1 ETH</span> = <span id="eth-cbt-rate-update">0</span> USD</h2>
+            </div>
           </div>
 
           <div class="hero-content">
@@ -786,51 +845,53 @@
 </body>
 
 <script type="text/javascript">
-  function getTimeRemaining(endtime) {
-    var t = Date.parse(endtime) - Date.parse(new Date());
-    var seconds = Math.floor((t / 1000) % 60);
-    var minutes = Math.floor((t / 1000 / 60) % 60);
-    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-    var days = Math.floor(t / (1000 * 60 * 60 * 24));
-    return {
-      'total': t,
-      'days': days,
-      'hours': hours,
-      'minutes': minutes,
-      'seconds': seconds
-    };
-  }
-
   function initializeClock(endtime) {
-    var daysSpan = document.getElementById('days');;
-    var hoursSpan = document.getElementById('hours');;
-    var minutesSpan = document.getElementById('minutes');;
-    var secondsSpan = document.getElementById('seconds');;
+    var daysSpan = document.getElementById('days');
+    var hoursSpan = document.getElementById('hours');
+    var minutesSpan = document.getElementById('minutes');
+    var secondsSpan = document.getElementById('seconds');
+    var t = endtime * 1000
+
+    function getTimeRemaining() {
+      // var t = Date.parse(endtime) - Date.parse(new Date());
+      t = t - 1000
+      var seconds = Math.floor((t / 1000) % 60);
+      var minutes = Math.floor((t / 1000 / 60) % 60);
+      var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+      var days = Math.floor(t / (1000 * 60 * 60 * 24));
+      return {
+        'total': t,
+        'days': days,
+        'hours': hours,
+        'minutes': minutes,
+        'seconds': seconds
+      };
+    }
 
     function updateClock() {
-      var t = getTimeRemaining(endtime);
+      var time = getTimeRemaining(endtime);
 
-      daysSpan.innerHTML = t.days;
-      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+      daysSpan.innerHTML = time.days;
+      hoursSpan.innerHTML = ('0' + time.hours).slice(-2);
+      minutesSpan.innerHTML = ('0' + time.minutes).slice(-2);
+      secondsSpan.innerHTML = ('0' + time.seconds).slice(-2);
 
-      if (t.total <= 0) {
+      if (time.total <= 0) {
         clearInterval(timeinterval);
       }
     }
 
-    updateClock();
+    // updateClock();
     if(timeinterval) {
       clearInterval(timeinterval)
     }
-    console.log(endtime);
+
     var timeinterval = setInterval(updateClock, 1000);
   }
 
   // var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-  var deadline = new Date(2017, 10, 28, 18, 00);
-  initializeClock(deadline);
+  // var deadline = new Date(2017, 10, 28, 18, 00);
+  // initializeClock(deadline);
 
   (function() {
   var tokenAPI = "https://6id7qpffck.execute-api.eu-west-1.amazonaws.com/sand030/v1.0/rates";
@@ -838,15 +899,21 @@
     format: "json"
   })
     .done(function( data ) {
-      console.log(data);
       var tokenSold = data.total_tokens_sold
       var tokenTotal = 400000000
       var progressPercent = tokenSold * 100 / tokenTotal
+      var lastPriceUpdateDOM = document.getElementById('last-price-update')
+      var lastPriceUpdate = new Date() - new Date(data.tickers.timestamp)
+
       var percentageDOM = document.getElementById('token-sold-percentage')
       var progressDOM = document.getElementById('token-sale-progress-internal')
 
       var tokenSoldDOM = document.getElementById('token-sold')
       var usdRaisedDOM = document.getElementById('usd-raised')
+      var usdRaised = data.total_raised.toFixed(2).toLocaleString()
+
+      var btcRateUpdateDOM = document.getElementById('btc-cbt-rate-update')
+      var ethRateUpdateDOM = document.getElementById('eth-cbt-rate-update')
 
       var ethRateDOM = document.getElementById('eth-cbt-rate')
       var ethRate = (1 / data.tickers.ETH).toFixed(2)
@@ -855,15 +922,23 @@
       var btcRate = (1 / data.tickers.BTC).toFixed(2)
 
       var bonusDOM = document.getElementById('bonus')
-      var usdRaised = tokenSold * 0.0625
+
 
       if(data.bonus_still_available) {
         bonusDOM.style.display = 'block'
       }
 
+      initializeClock(data.seconds_left_to_end);
+
+      lastPriceUpdateDOM.innerText = Math.floor(lastPriceUpdate / 60 / 60 / 1000)
       percentageDOM.innerHTML = (progressPercent).toFixed(1)
-      ethRateDOM.innerText = ethRate
-      btcRateDOM.innerText = btcRate
+
+      btcRateDOM.innerText = (btcRate * 16).toLocaleString()
+      ethRateDOM.innerText = (ethRate * 16).toLocaleString()
+
+      btcRateUpdateDOM.innerText = btcRate.toLocaleString()
+      ethRateUpdateDOM.innerText = ethRate.toLocaleString()
+
       tokenSoldDOM.innerText = Math.floor(tokenSold).toLocaleString()
       usdRaisedDOM.innerText = Math.floor(usdRaised).toLocaleString()
       progressDOM.style.width = '' + progressPercent + '%'
