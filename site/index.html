@@ -112,7 +112,72 @@
         <div class="hero-content-wrapper" >
           <div class="countdown-widget">
 
-            <div id="token-sale-started">
+            <div id="token-sale-not-started" style="display: none;">
+              <h5><strong>TOKEN SALE STARTS IN:</strong></h5>
+              <div class="countdown">
+                <div class="days-box time-box">
+                  <div id="days" class="days">
+                    09
+                  </div>
+                  <h5>DAYS</h5>
+                </div>
+
+                <div class="time-clock" style="display: flex; flex-direction: row; margin-left: 30px">
+                  <div class="hours-box time-box">
+                    <div id="hours" class="hours">
+                      09
+                    </div>
+                    <h5>HOURS</h5>
+                  </div>
+
+                  <div class="clock-divider">
+                    <span>:</span>
+                  </div>
+
+                  <div class="minutes-box time-box">
+                    <div id="minutes" class="minutes">
+                      09
+                    </div>
+                    <h5>MINUTES</h5>
+                  </div>
+
+                  <div class="clock-divider">
+                    <span>:</span>
+                  </div>
+
+                  <div class="seconds-box time-box">
+                    <div id="seconds" class="seconds">
+                      09
+                    </div>
+                    <h5>SECONDS</h5>
+                  </div>
+                </div>
+
+              </div>
+
+              <a href="https://whitelist.commerceblock.com/" class="participate-link">Whitelist now!</a>
+
+              <div class="conversion-rates">
+                <h5><strong>CBT PRICES</strong></h5>
+
+                <div class="cbt-rate cbt-usd">
+                  <h2><span class="cbt-green">1 CBT</span> = <span style="usd-rate">0.0625 USD</span></h2>
+                  <h2><span style="usd-rate">1 USD</span> = <span class="cbt-green">16 CBT</span></h2>
+                </div>
+
+                <!-- <div class="cbt-rate cbt-btc">
+                  <h2><span class="cbt-green">1 CBT</span> = <span style="btc-rate">0.0625</span></h2>
+                </div>
+
+                <div class="cbt-rate cbt-eth">
+                  <h2><span class="cbt-green">1 CBT</span> = <span style="eth-rate">0.0625</span></h2>
+                </div> -->
+              </div>
+
+              <h5 class="distribution-details">The BTC and ETH conversion rates will be published 24h prior to the token sale and will be updated daily.</h5>
+            </div>
+
+            <div id="token-sale-started" style="display: none;">
               <h5><strong>TOKEN SALE ENDS IN:</strong></h5>
               <div class="countdown">
                 <div class="days-box time-box">
@@ -906,6 +971,17 @@
     format: "json"
   })
     .done(function( data ) {
+
+      var tokenSaleNotStartedDOM = document.getElementById('token-sale-not-started')
+      var tokenSaleStartedDOM = document.getElementById('tokenSaleStartedDOM')
+
+      if(data.is_sale_started) {
+        tokenSaleStartedDOM.style.display = 'block'
+      } else {
+        tokenSaleNotStartedDOM.style.display = 'block'
+      }
+
+
       var tokenSold = data.total_tokens_sold
       var tokenTotal = 400000000
       var progressPercent = tokenSold * 100 / tokenTotal
@@ -934,6 +1010,8 @@
       if(data.bonus_still_available) {
         bonusDOM.style.display = 'block'
       }
+
+      console.log(data);
 
       initializeClock(data.seconds_left_to_end);
 
