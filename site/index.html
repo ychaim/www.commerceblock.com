@@ -243,12 +243,9 @@
                     400,000,000
                   </div>
                 </div>
-                <div id="total-raised-dollar">
-                  Total raised: $<span id="usd-raised">0</span>
-                </div>
                 <div id="bonus" style="display: none;">
                   <h2>+25% Bonus</h2>
-                  <h5><strong style="color: gray;">ON FIRST 20% TOKEN SOLD</strong></h5>
+                  <h5><strong style="color: gray;">ON FIRST 10% TOKEN SOLD</strong></h5>
                 </div>
               </div>
 
@@ -1084,8 +1081,6 @@
       var progressDOM = document.getElementById('token-sale-progress-internal')
 
       var tokenSoldDOM = document.getElementById('token-sold')
-      var usdRaisedDOM = document.getElementById('usd-raised')
-      var usdRaised = data.total_raised.toFixed(2).toLocaleString()
 
       var btcRateUpdateDOM = document.getElementById('btc-cbt-rate-update')
       var ethRateUpdateDOM = document.getElementById('eth-cbt-rate-update')
