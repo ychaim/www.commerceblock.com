@@ -1058,7 +1058,7 @@
       var tokenSaleOverDOM = document.getElementById('token-sale-over')
 
       spinnerDOM.style.display = 'none'
-      if(data.is_sale_started) {
+      if(data.is_sale_started && !data.is_sale_ended && !data.is_cap_reached) {
         tokenSaleStartedDOM.style.display = ''
         initializeClock(data.seconds_left_to_end * 1000);
       } else if(data.is_cap_reached || data.is_sale_ended){
@@ -1110,7 +1110,6 @@
       ethRateUpdateDOM.innerText = ethRate.toLocaleString()
 
       tokenSoldDOM.innerText = Math.floor(tokenSold).toLocaleString()
-      usdRaisedDOM.innerText = Math.floor(usdRaised).toLocaleString()
       progressDOM.style.width = '' + progressPercent + '%'
     });
   })();
