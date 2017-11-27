@@ -239,7 +239,7 @@
                   <div class="token-sold">
                     0
                   </div>
-                  <div id="total">
+                  <div class="total">
                     400,000,000
                   </div>
                 </div>
@@ -414,7 +414,7 @@
                   <div class="token-sold"> //convert to class
                     0
                   </div>
-                  <div id="total">
+                  <div class="total">
                     400,000,000
                   </div>
                 </div>
@@ -1067,6 +1067,10 @@
   // initializeClock(deadline);
 
   (function() {
+  var totalDOM = document.getElementsByClassName("total")
+  totalDOM[0].innerText = (400000000).toLocaleString()
+  totalDOM[1].innerText = (400000000).toLocaleString()
+
   var tokenAPI = "https://9s7o6vm715.execute-api.eu-west-1.amazonaws.com/prod021/v1.0/rates";
   $.getJSON( tokenAPI, {
     format: "json"
