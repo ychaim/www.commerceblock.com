@@ -229,14 +229,14 @@
               <a href="https://whitelist.commerceblock.com/" class="participate-link">Participate now!</a>
 
               <div class="token-sale-progress-bar-wrapper">
-                <h5><strong> <span id="token-sold-percentage">0</span>% TOKEN SOLD</strong></h5>
+                <h5><strong> <span class="token-sold-percentage">0</span>% TOKEN SOLD</strong></h5>
                 <div class="token-sale-progress">
                   <div class="token-sale-progress-internal">
 
                   </div>
                 </div>
                 <div class="token-sale-legend">
-                  <div id="token-sold">
+                  <div class="token-sold">
                     0
                   </div>
                   <div id="total">
@@ -397,31 +397,27 @@
             </div>
 
             <div id="token-sale-over" style="display: none;" class="countdown-widget">
-              <h5><strong>TOKEN SALE IS CLOSE</strong></h5>
+              <h5><strong>TOKEN SALE IS NOW CLOSE</strong></h5>
 
               <div class="token-sale-progress-bar-wrapper">
-                <h5><strong> <span id="token-sold-percentage">0</span>% TOKEN SOLD</strong></h5>
+                <h5><strong> <span class="token-sold-percentage">0</span>% TOKEN SOLD</strong></h5>
                 <div class="token-sale-progress">
                   <div class="token-sale-progress-internal">
 
                   </div>
                 </div>
                 <div class="token-sale-legend">
-                  <div id="token-sold">
+                  <div class="token-sold"> //convert to class
                     0
                   </div>
                   <div id="total">
                     400,000,000
                   </div>
                 </div>
-                <div id="bonus" style="display: none;">
-                  <h2>+25% Bonus</h2>
-                  <h6><strong style="color: gray;">ON THE FIRST 10% OF PUBLIC TOKENS SOLD</strong></h6>
-                </div>
               </div>
 
               <h2>Thank you for participating!</h2>
-
+              <p>Stay in touch on <a style="color: green" href="https://t.me/joinchat/Ge36IURXhKAS_6HTznUXUg">Telegram</a> or <a style="color: green" href="https://twitter.com/commerceblock">twitter</a>. </p>
             </div>
 
 
@@ -1091,17 +1087,16 @@
         initializeClock(t);
       }
 
-
       var tokenSold = data.total_tokens_sold
       var tokenTotal = 400000000
       var progressPercent = tokenSold * 100 / tokenTotal
       var lastPriceUpdateDOM = document.getElementById('last-price-update')
       var lastPriceUpdate = new Date() - new Date(data.tickers.timestamp)
 
-      var percentageDOM = document.getElementById('token-sold-percentage')
-      var progressDOM = document.getElementById('token-sale-progress-internal')
+      var percentageDOM = document.getElementsByClassName('token-sold-percentage')
+      var progressDOM = document.getElementsByClassName('token-sale-progress-internal')
 
-      var tokenSoldDOM = document.getElementById('token-sold')
+      var tokenSoldDOM = document.getElementsByClassName('token-sold')
 
       var btcRateUpdateDOM = document.getElementById('btc-cbt-rate-update')
       var ethRateUpdateDOM = document.getElementById('eth-cbt-rate-update')
@@ -1122,7 +1117,8 @@
       console.log(data);
 
       lastPriceUpdateDOM.innerText = Math.floor(lastPriceUpdate / 60 / 60 / 1000)
-      percentageDOM.innerHTML = (progressPercent).toFixed(1)
+      percentageDOM[0].innerHTML = (progressPercent).toFixed(1)
+      percentageDOM[1].innerHTML = (progressPercent).toFixed(1)
 
       btcRateDOM.innerText = (btcRate * 16).toLocaleString()
       ethRateDOM.innerText = (ethRate * 16).toLocaleString()
@@ -1130,8 +1126,12 @@
       btcRateUpdateDOM.innerText = btcRate.toLocaleString()
       ethRateUpdateDOM.innerText = ethRate.toLocaleString()
 
-      tokenSoldDOM.innerText = Math.floor(tokenSold).toLocaleString()
-      progressDOM.style.width = '' + progressPercent + '%'
+      tokenSoldDOM[0].innerText = Math.floor(tokenSold).toLocaleString()
+      tokenSoldDOM[1].innerText = Math.floor(tokenSold).toLocaleString()
+
+      progressDOM[0].style.width = '' + progressPercent + '%'
+      progressDOM[1].style.width = '' + progressPercent + '%'
+
     });
   })();
 </script>
