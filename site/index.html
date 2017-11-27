@@ -267,12 +267,11 @@
                 </div> -->
               </div>
 
-              <h5 class="distribution-details">Last rates update: <span id="last-price-update">1</span>h ago.</h5>
+              <h5 class="distribution-details">Last rates update: <span class="last-price-update">1</span>h ago.</h5>
               <div class="cbt-rate smaller">
-                <h2><span class="cbt-green" style="usd-rate">1 BTC</span> = <span id="btc-cbt-rate-update">0</span> USD</h2>
-                <h2><span class="cbt-green" style="usd-rate">1 ETH</span> = <span id="eth-cbt-rate-update">0</span> USD</h2>
+                <h2><span class="cbt-green" style="usd-rate">1 BTC</span> = <span class="btc-cbt-rate-update">0</span> USD</h2>
+                <h2><span class="cbt-green" style="usd-rate">1 ETH</span> = <span class="eth-cbt-rate-update">0</span> USD</h2>
               </div>
-
 
             </div>
             <div id="token-sale-not-started" style="display: none;" class="countdown-widget">
@@ -393,10 +392,15 @@
                 </div> -->
               </div>
 
-              <h5 class="distribution-details">The BTC and ETH conversion rates will be published 24h prior to the token sale and will be updated daily.</h5>
+              <h5 class="distribution-details">Last rates update: <span class="last-price-update">1</span>h ago.</h5>
+              <div class="cbt-rate smaller">
+                <h2><span class="cbt-green" style="usd-rate">1 BTC</span> = <span class="btc-cbt-rate-update">0</span> USD</h2>
+                <h2><span class="cbt-green" style="usd-rate">1 ETH</span> = <span class="eth-cbt-rate-update">0</span> USD</h2>
+              </div>
             </div>
 
             <div id="token-sale-over" style="display: none;" class="countdown-widget">
+              <h2>Thank you for participating!</h2>
               <h5><strong>TOKEN SALE IS NOW CLOSE</strong></h5>
 
               <div class="token-sale-progress-bar-wrapper">
@@ -416,7 +420,6 @@
                 </div>
               </div>
 
-              <h2>Thank you for participating!</h2>
               <p>Stay in touch on <a style="color: green" href="https://t.me/joinchat/Ge36IURXhKAS_6HTznUXUg">Telegram</a> or <a style="color: green" href="https://twitter.com/commerceblock">twitter</a>. </p>
             </div>
 
@@ -1090,7 +1093,7 @@
       var tokenSold = data.total_tokens_sold
       var tokenTotal = 400000000
       var progressPercent = tokenSold * 100 / tokenTotal
-      var lastPriceUpdateDOM = document.getElementById('last-price-update')
+      var lastPriceUpdateDOM = document.getElementsByClassName('last-price-update')
       var lastPriceUpdate = new Date() - new Date(data.tickers.timestamp)
 
       var percentageDOM = document.getElementsByClassName('token-sold-percentage')
@@ -1098,8 +1101,8 @@
 
       var tokenSoldDOM = document.getElementsByClassName('token-sold')
 
-      var btcRateUpdateDOM = document.getElementById('btc-cbt-rate-update')
-      var ethRateUpdateDOM = document.getElementById('eth-cbt-rate-update')
+      var btcRateUpdateDOM = document.getElementsByClassName('btc-cbt-rate-update')
+      var ethRateUpdateDOM = document.getElementsByClassName('eth-cbt-rate-update')
 
       var ethRateDOM = document.getElementById('eth-cbt-rate')
       var ethRate = (1 / data.tickers.ETH).toFixed(2)
@@ -1116,15 +1119,19 @@
 
       console.log(data);
 
-      lastPriceUpdateDOM.innerText = Math.floor(lastPriceUpdate / 60 / 60 / 1000)
+      lastPriceUpdateDOM[0].innerText = Math.floor(lastPriceUpdate / 60 / 60 / 1000)
+      lastPriceUpdateDOM[1].innerText = Math.floor(lastPriceUpdate / 60 / 60 / 1000)
       percentageDOM[0].innerHTML = (progressPercent).toFixed(1)
       percentageDOM[1].innerHTML = (progressPercent).toFixed(1)
 
       btcRateDOM.innerText = (btcRate * 16).toLocaleString()
       ethRateDOM.innerText = (ethRate * 16).toLocaleString()
 
-      btcRateUpdateDOM.innerText = btcRate.toLocaleString()
-      ethRateUpdateDOM.innerText = ethRate.toLocaleString()
+      btcRateUpdateDOM[0].innerText = btcRate.toLocaleString()
+      btcRateUpdateDOM[1].innerText = btcRate.toLocaleString()
+
+      ethRateUpdateDOM[0].innerText = ethRate.toLocaleString()
+      ethRateUpdateDOM[1].innerText = ethRate.toLocaleString()
 
       tokenSoldDOM[0].innerText = Math.floor(tokenSold).toLocaleString()
       tokenSoldDOM[1].innerText = Math.floor(tokenSold).toLocaleString()
