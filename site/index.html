@@ -269,7 +269,7 @@
                 </div> -->
               </div>
 
-              <h5 class="distribution-details">Updated every 24 hours <br> Last rates update: <span class="last-price-update">1</span>h ago.</h5>
+              <h5 class="distribution-details">Updated every 24 hours.</h5>
               <div class="cbt-rate smaller">
                 <h2><span class="cbt-green" style="usd-rate">1 BTC</span> = <span class="btc-cbt-rate-update">0</span> USD</h2>
                 <h2><span class="cbt-green" style="usd-rate">1 ETH</span> = <span class="eth-cbt-rate-update">0</span> USD</h2>
@@ -394,7 +394,7 @@
                 </div> -->
               </div>
 
-              <h5 class="distribution-details">Updated every 24 hours <br> Last rates update: <span class="last-price-update">1</span>h ago</h5>
+              <h5 class="distribution-details">Updated every 24 hours.</h5>
               <div class="cbt-rate smaller">
                 <h2><span class="cbt-green" style="usd-rate">1 BTC</span> = <span class="btc-cbt-rate-update">0</span> USD</h2>
                 <h2><span class="cbt-green" style="usd-rate">1 ETH</span> = <span class="eth-cbt-rate-update">0</span> USD</h2>
@@ -1099,8 +1099,8 @@
       var tokenSold = data.total_tokens_sold
       var tokenTotal = 400000000
       var progressPercent = tokenSold * 100 / tokenTotal
-      var lastPriceUpdateDOM = document.getElementsByClassName('last-price-update')
-      var lastPriceUpdate = new Date() - new Date(data.tickers.timestamp)
+      // var lastPriceUpdateDOM = document.getElementsByClassName('last-price-update')
+      // var lastPriceUpdate = new Date() - new Date(data.tickers.timestamp)
 
       var percentageDOM = document.getElementsByClassName('token-sold-percentage')
       var progressDOM = document.getElementsByClassName('token-sale-progress-internal')
@@ -1125,8 +1125,8 @@
 
       console.log(data);
 
-      lastPriceUpdateDOM[0].innerText = Math.floor(lastPriceUpdate / 60 / 60 / 1000)
-      lastPriceUpdateDOM[1].innerText = Math.floor(lastPriceUpdate / 60 / 60 / 1000)
+      // lastPriceUpdateDOM[0].innerText = Math.floor(lastPriceUpdate / 60 / 60 / 1000)
+      // lastPriceUpdateDOM[1].innerText = Math.floor(lastPriceUpdate / 60 / 60 / 1000)
       percentageDOM[0].innerHTML = (progressPercent).toFixed(1)
       percentageDOM[1].innerHTML = (progressPercent).toFixed(1)
 
