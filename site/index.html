@@ -1089,9 +1089,9 @@
         tokenSaleOverDOM.style.display = ''
       } else {
         tokenSaleNotStartedDOM.style.display = ''
-        var deadline = new Date(2017, 10, 28, 18, 00) ;
+        var deadline = new Date(Date.UTC(2017, 10, 28, 16, 00)) ;
         var t = Date.parse(deadline) - Date.parse(new Date());
-        initializeClock(t);
+        initializeClock((data.seconds_left_to_end - 3 * 7 * 24 * 3600) * 1000);
       }
 
       var tokenSold = data.total_tokens_sold
