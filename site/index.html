@@ -245,10 +245,6 @@
                     400,000,000
                   </div>
                 </div>
-                <div id="bonus" style="display: none;">
-                  <h3>+25% Bonus</h3>
-                  <h6><strong style="color: gray;">ON THE FIRST 10% OF PUBLIC TOKENS SOLD</strong></h6>
-                </div>
               </div>
 
 
@@ -1114,17 +1110,17 @@
       var ethRateUpdateDOM = document.getElementsByClassName('eth-cbt-rate-update')
 
       var ethRateDOM = document.getElementById('eth-cbt-rate')
-      var ethRate = (1 / data.tickers.ETH).toFixed(2)
+      var ethRate = (data.tickers.ETHUSD / 100).toFixed(2)
 
       var btcRateDOM = document.getElementById('btc-cbt-rate')
-      var btcRate = (1 / data.tickers.BTC).toFixed(2)
+      var btcRate = (data.tickers.BTCUSD / 100).toFixed(2)
 
-      var bonusDOM = document.getElementById('bonus')
+      // var bonusDOM = document.getElementById('bonus')
 
 
-      if(data.bonus_still_available) {
-        bonusDOM.style.display = 'block'
-      }
+      // if(data.bonus_still_available) {
+      //   bonusDOM.style.display = 'block'
+      // }
 
       console.log(data);
 
