@@ -263,11 +263,12 @@
                 </div> -->
               </div>
 
+              <!--
               <h5 class="distribution-details">Updated every 24 hours.</h5>
               <div class="cbt-rate smaller">
                 <h2><span class="cbt-green" style="usd-rate">1 BTC</span> = <span class="btc-cbt-rate-update">0</span> USD</h2>
                 <h2><span class="cbt-green" style="usd-rate">1 ETH</span> = <span class="eth-cbt-rate-update">0</span> USD</h2>
-              </div>
+              </div> -->
 
             </div>
             <div id="token-sale-not-started" style="display: none;" class="countdown-widget">
@@ -1104,8 +1105,8 @@
 
       var tokenSoldDOM = document.getElementsByClassName('token-sold')
 
-      var btcRateUpdateDOM = document.getElementsByClassName('btc-cbt-rate-update')
-      var ethRateUpdateDOM = document.getElementsByClassName('eth-cbt-rate-update')
+      // var btcRateUpdateDOM = document.getElementsByClassName('btc-cbt-rate-update')
+      // var ethRateUpdateDOM = document.getElementsByClassName('eth-cbt-rate-update')
 
       var ethRateDOM = document.getElementById('eth-cbt-rate')
       var ethRate = (data.tickers.ETHUSD / 100).toFixed(2)
@@ -1130,11 +1131,11 @@
       btcRateDOM.innerText = (btcRate * 16).toLocaleString()
       ethRateDOM.innerText = (ethRate * 16).toLocaleString()
 
-      btcRateUpdateDOM[0].innerText = btcRate.toLocaleString()
-      btcRateUpdateDOM[1].innerText = btcRate.toLocaleString()
+      // btcRateUpdateDOM[0].innerText = btcRate.toLocaleString()
+      // btcRateUpdateDOM[1].innerText = btcRate.toLocaleString()
 
-      ethRateUpdateDOM[0].innerText = ethRate.toLocaleString()
-      ethRateUpdateDOM[1].innerText = ethRate.toLocaleString()
+      // ethRateUpdateDOM[0].innerText = ethRate.toLocaleString()
+      // ethRateUpdateDOM[1].innerText = ethRate.toLocaleString()
 
       tokenSoldDOM[0].innerText = Math.floor(tokenSold).toLocaleString()
       tokenSoldDOM[1].innerText = Math.floor(tokenSold).toLocaleString()
