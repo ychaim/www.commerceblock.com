@@ -111,22 +111,6 @@
 
         <div class="hero-content-wrapper" >
 
-            <div id="spinner-placeholder" class="countdown-widget">
-              <div class="sk-circle" style="position: relative; top: 0;">
-                <div class="sk-circle1 sk-child"></div>
-                <div class="sk-circle2 sk-child"></div>
-                <div class="sk-circle3 sk-child"></div>
-                <div class="sk-circle4 sk-child"></div>
-                <div class="sk-circle5 sk-child"></div>
-                <div class="sk-circle6 sk-child"></div>
-                <div class="sk-circle7 sk-child"></div>
-                <div class="sk-circle8 sk-child"></div>
-                <div class="sk-circle9 sk-child"></div>
-                <div class="sk-circle10 sk-child"></div>
-                <div class="sk-circle11 sk-child"></div>
-                <div class="sk-circle12 sk-child"></div>
-              </div>
-            </div>
             <div id="token-sale-started" style="display: none;" class="countdown-widget">
               <h5><strong>TOKEN SALE ENDS IN:</strong></h5>
               <div class="countdown">
@@ -396,26 +380,9 @@
               </div>
             </div>
 
-            <div id="token-sale-over" style="display: none;" class="countdown-widget">
+            <div id="token-sale-over" class="countdown-widget">
               <h2>Thank you for participating!</h2>
               <h5><strong>TOKEN SALE IS NOW CLOSED</strong></h5>
-
-              <div class="token-sale-progress-bar-wrapper">
-                <h5><strong> <span class="token-sold-percentage">0</span>% TOKEN SOLD</strong></h5>
-                <div class="token-sale-progress">
-                  <div class="token-sale-progress-internal">
-
-                  </div>
-                </div>
-                <div class="token-sale-legend">
-                  <div class="token-sold"> //convert to class
-                    0
-                  </div>
-                  <div class="total">
-                    400,000,000
-                  </div>
-                </div>
-              </div>
 
               <p>Stay in touch on <a style="color: green" href="https://t.me/joinchat/Ge36IURXhKAS_6HTznUXUg">Telegram</a> or <a style="color: green" href="https://twitter.com/commerceblock">Twitter</a></p>
             </div>
@@ -1011,140 +978,5 @@
   <script src="js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
-
-<script type="text/javascript">
-  function initializeClock(endtime) {
-    var daysSpan = document.getElementsByClassName('days');
-    var hoursSpan = document.getElementsByClassName('hours');
-    var minutesSpan = document.getElementsByClassName('minutes');
-    var secondsSpan = document.getElementsByClassName('seconds');
-    var t = endtime
-
-    function getTimeRemaining() {
-      // var t = Date.parse(endtime) - Date.parse(new Date());
-      t = t - 1000
-      var seconds = Math.floor((t / 1000) % 60);
-      var minutes = Math.floor((t / 1000 / 60) % 60);
-      var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-      var days = Math.floor(t / (1000 * 60 * 60 * 24));
-      return {
-        'total': t,
-        'days': days,
-        'hours': hours,
-        'minutes': minutes,
-        'seconds': seconds
-      };
-    }
-
-    function updateClock() {
-      var time = getTimeRemaining(endtime);
-
-      daysSpan[0].innerHTML = time.days;
-      hoursSpan[0].innerHTML = ('0' + time.hours).slice(-2);
-      minutesSpan[0].innerHTML = ('0' + time.minutes).slice(-2);
-      secondsSpan[0].innerHTML = ('0' + time.seconds).slice(-2);
-
-      daysSpan[1].innerHTML = time.days;
-      hoursSpan[1].innerHTML = ('0' + time.hours).slice(-2);
-      minutesSpan[1].innerHTML = ('0' + time.minutes).slice(-2);
-      secondsSpan[1].innerHTML = ('0' + time.seconds).slice(-2);
-
-      if (time.total <= 0) {
-        clearInterval(timeinterval);
-      }
-    }
-
-    // updateClock();
-    if(timeinterval) {
-      clearInterval(timeinterval)
-    }
-
-    var timeinterval = setInterval(updateClock, 1000);
-  }
-
-  // var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-  // var deadline = new Date(2017, 10, 28, 18, 00);
-  // initializeClock(deadline);
-
-  (function() {
-  var totalDOM = document.getElementsByClassName("total")
-  totalDOM[0].innerText = (400000000).toLocaleString()
-  totalDOM[1].innerText = (400000000).toLocaleString()
-
-  var tokenAPI = "https://9s7o6vm715.execute-api.eu-west-1.amazonaws.com/prod021/v1.0/rates";
-  $.getJSON( tokenAPI, {
-    format: "json"
-  })
-    .done(function( data ) {
-      var spinnerDOM = document.getElementById('spinner-placeholder')
-      var tokenSaleNotStartedDOM = document.getElementById('token-sale-not-started')
-      var tokenSaleStartedDOM = document.getElementById('token-sale-started')
-      var tokenSaleOverDOM = document.getElementById('token-sale-over')
-
-      spinnerDOM.style.display = 'none'
-      if(data.is_sale_started && !data.is_sale_ended && !data.is_cap_reached) {
-        tokenSaleStartedDOM.style.display = ''
-        initializeClock(data.seconds_left_to_end * 1000);
-      } else if(data.is_cap_reached || data.is_sale_ended){
-        tokenSaleOverDOM.style.display = ''
-      } else {
-        tokenSaleNotStartedDOM.style.display = ''
-        var deadline = new Date(Date.UTC(2017, 10, 28, 16, 00)) ;
-        var t = Date.parse(deadline) - Date.parse(new Date());
-        initializeClock((data.seconds_left_to_end - 3 * 7 * 24 * 3600) * 1000);
-      }
-
-      var tokenSold = data.total_tokens_sold
-      var tokenTotal = 400000000
-      var progressPercent = tokenSold * 100 / tokenTotal
-      // var lastPriceUpdateDOM = document.getElementsByClassName('last-price-update')
-      // var lastPriceUpdate = new Date() - new Date(data.tickers.timestamp)
-
-      var percentageDOM = document.getElementsByClassName('token-sold-percentage')
-      var progressDOM = document.getElementsByClassName('token-sale-progress-internal')
-
-      var tokenSoldDOM = document.getElementsByClassName('token-sold')
-
-      // var btcRateUpdateDOM = document.getElementsByClassName('btc-cbt-rate-update')
-      // var ethRateUpdateDOM = document.getElementsByClassName('eth-cbt-rate-update')
-
-      var ethRateDOM = document.getElementById('eth-cbt-rate')
-      var ethRate = (data.tickers.ETHUSD / 100).toFixed(2)
-
-      var btcRateDOM = document.getElementById('btc-cbt-rate')
-      var btcRate = (data.tickers.BTCUSD / 100).toFixed(2)
-
-      // var bonusDOM = document.getElementById('bonus')
-
-
-      // if(data.bonus_still_available) {
-      //   bonusDOM.style.display = 'block'
-      // }
-
-      console.log(data);
-
-      // lastPriceUpdateDOM[0].innerText = Math.floor(lastPriceUpdate / 60 / 60 / 1000)
-      // lastPriceUpdateDOM[1].innerText = Math.floor(lastPriceUpdate / 60 / 60 / 1000)
-      percentageDOM[0].innerHTML = (progressPercent).toFixed(1)
-      percentageDOM[1].innerHTML = (progressPercent).toFixed(1)
-
-      btcRateDOM.innerText = (btcRate * 16).toLocaleString()
-      ethRateDOM.innerText = (ethRate * 16).toLocaleString()
-
-      // btcRateUpdateDOM[0].innerText = btcRate.toLocaleString()
-      // btcRateUpdateDOM[1].innerText = btcRate.toLocaleString()
-
-      // ethRateUpdateDOM[0].innerText = ethRate.toLocaleString()
-      // ethRateUpdateDOM[1].innerText = ethRate.toLocaleString()
-
-      tokenSoldDOM[0].innerText = Math.floor(tokenSold).toLocaleString()
-      tokenSoldDOM[1].innerText = Math.floor(tokenSold).toLocaleString()
-
-      progressDOM[0].style.width = '' + progressPercent + '%'
-      progressDOM[1].style.width = '' + progressPercent + '%'
-
-    });
-  })();
-</script>
 
 </html>
