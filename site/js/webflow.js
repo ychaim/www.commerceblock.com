@@ -1097,7 +1097,7 @@
             }
         });
       } else {
-        var url = 'https://85hv1luk2g.execute-api.us-east-1.amazonaws.com/prod/contact';
+        var url = 'https://mbzyqe7cc6.execute-api.eu-west-1.amazonaws.com/prod/contact';
         var msg = {
             source: payload.name,
             name: payload.fields.name,
